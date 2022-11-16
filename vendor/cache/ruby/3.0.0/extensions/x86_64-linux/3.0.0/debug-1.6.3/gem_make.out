@@ -1,0 +1,16 @@
+current directory: /home/pin2/project/member/vendor/cache/ruby/3.0.0/gems/debug-1.6.3/ext/debug
+/usr/bin/ruby3.0 -I /usr/lib/ruby/vendor_ruby -r ./siteconf20221115-4808-n9m0cw.rb extconf.rb
+creating Makefile
+
+current directory: /home/pin2/project/member/vendor/cache/ruby/3.0.0/gems/debug-1.6.3/ext/debug
+make DESTDIR\= clean
+
+current directory: /home/pin2/project/member/vendor/cache/ruby/3.0.0/gems/debug-1.6.3/ext/debug
+make DESTDIR\=
+compiling debug.c
+compiling iseq_collector.c
+linking shared-object debug/debug.so
+
+current directory: /home/pin2/project/member/vendor/cache/ruby/3.0.0/gems/debug-1.6.3/ext/debug
+make DESTDIR\= install
+/usr/bin/install -c -m 0755 debug.so ./.gem.20221115-4808-u1lnve/debug
