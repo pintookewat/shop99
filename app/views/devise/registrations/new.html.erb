@@ -10,10 +10,12 @@
 
   <div class="field">
     <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"form-control", placeholder: 'Enter your Name' %>
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"form-control", placeholder: 'Enter your Email' %>
   </div>
 
-  <div class="field ml-2">
+  <div class="field">
+  <%= f.label :gender, 'Gender' %>
+  <br>
   <span class=" ml-2">
     <%= f.radio_button :gender, 'Male' %>
     <%= f.label :gender, 'Male', :value => 'Male' %>
@@ -34,7 +36,7 @@
 
   <div class="field">
     <%= f.label :proffesion %><br />
-    <%= f.text_field :proffesion, autofocus: true, autocomplete: "proffesion", class:"form-control", placeholder: 'Enter your ' %>
+   <%= f.select :proffesion, options_for_select([["Select One", ""], "Student", "Work", "Office", "Home", "Other"]),{}, class:'form-control' %>
   </div>  
 
   <div class="field">
