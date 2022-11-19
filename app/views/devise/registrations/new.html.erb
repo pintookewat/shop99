@@ -16,7 +16,7 @@
   <div class="field">
   <%= f.label :gender, 'Gender' %>
   <br>
-  <span class=" ml-2">
+  <span class="">
     <%= f.radio_button :gender, 'Male' %>
     <%= f.label :gender, 'Male', :value => 'Male' %>
   </span>
@@ -54,4 +54,48 @@
   </div>
 <% end %>
 
+
 <%= render "devise/shared/links" %>
+
+<style type="text/css">
+  
+  .error{
+    border: 1px solid green;
+  }
+
+</style>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.min.js"></script>
+
+<script type="text/javascript">
+  
+$( document ).ready(function() {
+
+  $("#new_user").validate({
+    rules: {
+      user[phone]: "required",
+      user[full_name]: "required",
+      `user[email]`: {
+        required: true,
+        email: true 
+      },
+    },
+
+    messages: {
+      user[phone]: "First Name field cannot be blank!",
+      user[full_name]: "Last Name field cannot be blank!",
+      `user[email]` : "Please enter a valid email address"
+    },
+    highlight: function (element) {
+        $(element).addClass('error');
+        alert("hello")
+    },
+    unhighlight: function (element) {
+      $(element).removeClass('error');
+    },
+
+  });
+
+});
+</script>
