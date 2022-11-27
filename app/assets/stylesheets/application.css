@@ -1,12 +1,52 @@
 :root {
   --main-back-color: #6658ea;
-/*var(--main-back-color) */
 }
 
+.error{
+    border: 1px solid red !important;
+}
 /*start Sign_up*/
 
 #sign_up{
-    width: 280px;
-    height: 300px;
+    width: 400px;
+    margin: auto;
+    border: ;
 }
+#sign_up h2{
+    color: var(--main-back-color);
+}
+
+.sign_up_btn{
+    background-color: var(--main-back-color);
+    height: 46px;
+    width: 110px;
+    box-shadow:  8px 6px 7px 1px #888888;
+    color: white;
+    border: none;
+    border-bottom-left-radius: 13px;
+    border-top-right-radius: 15px;
+    margin-left: 100px;
+    transition: 1s;
+}
+.sign_up_btn:hover{
+    background-color: white;
+    height: 46px;
+    width: 110px;
+    box-shadow:  8px 6px 7px 1px var(--main-back-color);
+    color: var(--main-back-color);
+    border: none;
+    border-bottom-left-radius: 13px;
+    border-top-right-radius: 15px;
+    margin-left: 100px;
+    cursor: pointer;
+}
+
+
+.sign_up_link_btn a {
+    margin-top: 20px;
+    color: var(--main-back-color);
+    text-decoration: underline;
+    margin-right: 87px;
+}
+
 /*end Sign_up*/
