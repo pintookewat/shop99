@@ -1,19 +1,53 @@
 :root {
   --main-back-color: #6658ea;
+  --main-font-family:  'Inter';
 }
 
-.error{
-    border: 1px solid red !important;
-}
-/*start Sign_up*/
-
+ /*start sign_up*/
 #sign_up{
-    width: 400px;
-    margin: auto;
-    border: ;
+  margin-top: 20px;
+  margin-left: 451px;
+  box-sizing: border-box;
+  width: 459px;
+  height: 620px;
+  border: 1px solid var(--main-back-color);
+  border-radius: 0px 40px
 }
+
+.sign_up_field{
+  margin-left: 68px; 
+  box-sizing: border-box;
+  width: 323px !important;
+  height: 28px;
+  background: #FFFFFF;
+  border: 1px solid black !important;
+  border-radius: 0px 15px !important;
+}
+.sign_up_field_text{
+    font-family: var(--main-font-family);
+  font-style: normal;
+  font-weight: 400;
+  margin-left: 68px;  
+}
+
+#sign_up_field{
+  margin-left: 68px; 
+  box-sizing: border-box;
+  width: 323px !important;
+  height: 33px;
+  background: #FFFFFF;
+  border: 1px solid black !important;
+  border-radius: 0px 15px !important;
+}
+
 #sign_up h2{
-    color: var(--main-back-color);
+  font-family: var(--main-font-family);
+  font-style: normal;
+  font-weight: 400;
+  font-size: 28px;
+  line-height: 24px;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  color: var(--main-back-color);
 }
 
 .sign_up_btn{
@@ -25,7 +59,6 @@
     border: none;
     border-bottom-left-radius: 13px;
     border-top-right-radius: 15px;
-    margin-left: 100px;
     transition: 1s;
 }
 .sign_up_btn:hover{
@@ -37,16 +70,70 @@
     border: none;
     border-bottom-left-radius: 13px;
     border-top-right-radius: 15px;
-    margin-left: 100px;
     cursor: pointer;
 }
 
 
 .sign_up_link_btn a {
-    margin-top: 20px;
-    color: var(--main-back-color);
-    text-decoration: underline;
-    margin-right: 87px;
+  text-decoration: underline;
+  font-size: 19px;
+  font-family: var(--main-font-family);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  color: var(--main-back-color);
 }
 
 /*end Sign_up*/
+
+
+
+/*start Sign_in*/
+
+#sign_in{
+  margin-top: 150px;
+  margin-left: 451px;
+  box-sizing: border-box;
+  width: 459px;
+  height: 360px;
+  border: 1px solid var(--main-back-color);
+  border-radius: 0px 40px
+}
+
+#sign_in h2{
+  margin-top: 20px !important;
+  font-family: var(--main-font-family);
+  font-style: normal;
+  font-weight: 400;
+  font-size: 28px;
+  line-height: 24px;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  color: var(--main-back-color);
+}
+/*end Sign_in*/
+
+
+/*start forget_password*/
+
+#forget_password{
+  margin-top: 150px;
+  margin-left: 451px;
+  box-sizing: border-box;
+  width: 459px;
+  height: 360px;
+  border: 1px solid var(--main-back-color);
+  border-radius: 0px 40px
+}
+
+#forget_password h2{
+  margin-top: 20px !important;
+  font-family: var(--main-font-family);
+  font-style: normal;
+  font-weight: 400;
+  font-size: 28px;
+  line-height: 24px;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  color: var(--main-back-color);
+}
+/*end forget_password*/
