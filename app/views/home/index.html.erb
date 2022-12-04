@@ -8,23 +8,21 @@
 <% end %> -->
 <div id="index">
   <div id="index_1">
-    
-    <div id="image_background" ></div>
-    <h6 class="text1">I will always love you with all my heart. People say they would love
-     to have a wife that  <br> would do  anything for her husband.  I will always love you with all my heart. People say they would love<br>
-     to have a wife that would do
-    </h6>
-    
     <div class="d-flex index_btn">
         <%= link_to "Login", user_session_path, class: 'sign_in_btn_index text-center' %>
 
         <%= link_to "Registration", 'users/sign_up', class: 'sign_up_btn_index text-center ml-5' %> 
     </div>
+    <h6 class="text1">I will always love you with all my heart. People say they would love
+     to have a wife that  <br> would do  anything for her husband.  I will always love you with all my heart. People say they would love<br>
+     to have a wife that would do
+    </h6>
+    <div id="image_background"></div>
+    
+    
   </div>
 
   <div id="index_2">
-
-    <div id="image_background2" ></div>
 
       <h6 class="text2">I will always love you with all my heart. People say they would love
        to have a wife that  <br> would do  anything for her husband.  I will always love you with all my heart. People say they would love<br>
@@ -34,16 +32,18 @@
       <div class="d-flex mt-4">
         <%= link_to "Find your", 'users/sign_up', class: 'sign_in_btn_index text-center' %>
       </div>
+    <div id="image_background2" ></div>
+
 
   </div>
 </div>
 
 
 <div class="row footer_btn mt-5">
-  <div class="col-6">
+  <div class="col-6 text-center">
     <%= link_to "Login", user_session_path, class: 'btn' %>
   </div>
-  <div class="col-6">
-    <%= link_to "Registration", 'users/sign_up', class: 'btn ml-5' %>
+  <div class="col-6 text-center">
+    <%= link_to "Registration", 'users/sign_up', class: 'btn' %>
   </div>
 </div>
