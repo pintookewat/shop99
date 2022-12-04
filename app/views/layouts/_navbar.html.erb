@@ -1,0 +1,25 @@
+<div id="navbar">
+	<div class="row">
+		<div class="col-4">
+			<% if user_signed_in?  %> 
+			<%= link_to "Term and Policy", user_session_path, class: 'text' %>
+			<% end %>
+		</div>
+		
+		<div class="col-4">
+			<% if user_signed_in?  %>
+			<%= link_to "Account", user_session_path, class: 'text' %>
+			<% end %>
+		</div>
+		
+		<div class="col-4">
+			<%= link_to "Apple.com", '/', class: 'text' %><br>
+		</div>
+    
+    <div class="col-4">
+    	<% if user_signed_in?  %> 
+      <%= link_to "Log out",  destroy_user_session_path, :method => :delete,  class: 'text' %>
+			<% end %>
+		</div>
+	</div>
+</div>
