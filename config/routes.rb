@@ -9,6 +9,8 @@ Rails.application.routes.draw do
   root "home#index"
 
   namespace :user do
+    get '/dashboard', to: "user#dashboard"
    resources :user
   end
+
 end
