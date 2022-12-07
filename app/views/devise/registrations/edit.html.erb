@@ -1,76 +1,74 @@
-<%= render "layouts/navbar" %>
-<div id="edit_page">
-  <h2  class= "text-center mt-2">Edit <%= resource_name.to_s.humanize %></h2>
+<div>
+  <%= render "layouts/navbar" %>
+  <div id="edit_page">
+    <h2  class= "text-center mt-2">Edit <%= resource_name.to_s.humanize %></h2>
 
-  <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-  <div class="ml-2">
-<!--     <%=# render "devise/shared/error_messages", resource: resource %> -->
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+      <div class="ml-2">
+      <!--     <%= render "devise/shared/error_messages", resource: resource %> -->
+      </div>
+      <div class="field">
+        <%= f.label :full_name , "Full Name*", class:"sign_up_field_text"%><br />
+        <%= f.text_field :full_name, autofocus: true, autocomplete: "full_name", class:"form-control sign_up_field", placeholder: 'Enter your Name' %>
+      </div>
+     <div class="field mt-1">
+        <%= f.label :email, "Email*", class:"sign_up_field_text" %><br />
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"form-control sign_up_field ", placeholder: 'Enter your Email' %>
+      </div>
+
+      <div class="field mt-1">
+         <%= f.label :gender, "Gender*", class:"sign_up_field_text" %>
+        <br>
+        <span class="sign_up_field_text">   
+          <%= f.radio_button :gender, 'Male' %>
+          <%= f.label :gender, 'Male', :value => 'Male' %>
+        </span>
+        <span class=" ml-3">
+          <%= f.radio_button :gender, 'Female' %> 
+          <%= f.label :gender, 'Female', :value => 'Female' %>
+        </span>
+        <span class=" ml-3">
+          <%= f.radio_button :gender, 'Other' %>
+          <%= f.label :gender, 'Other', :value => 'Other' %>
+        </span>
+      </div>
+      <div class="field ">
+        <%= f.label :phone, "Phone*", class:"sign_up_field_text" %><br />
+        <%= f.text_field :phone, autofocus: true, autocomplete: "phone", class:"form-control sign_up_field text", placeholder: 'Enter your Phone' %>
+      </div>
+
+      <div class="field mt-1 text">
+        <%= f.label :proffesion, "Proffesion*", class:"sign_up_field_text" %><br />
+       <%= f.select :proffesion, options_for_select([["Select One", ""], "Student", "Work", "Office", "Home", "Other"]),{}, class:'form-control sign_up_field', id: "sign_up_field" %>
+      </div>  
+
+      <!--     <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+          <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+        <% end %> -->
+
+      <div class="field mt-1">
+        <%= f.label :password, "Password*", class:"sign_up_field_text" %><br />
+        <%= f.password_field :password, autocomplete: "new-password", class:"form-control sign_up_field", placeholder: 'Enter your Password'  %>
+      </div>
+
+      <div class="field mt-1">
+        <%= f.label :password_confirmation, "Password Confirm*", class:"sign_up_field_text" %><br />
+        <%= f.password_field :password_confirmation, autocomplete: "new-password", class:"form-control sign_up_field", placeholder: 'Enter your Confirm Password' %>
+      </div>
+
+      <div class="field mt-1">
+        <%= f.label :current_password, "Current Password*", class:"sign_up_field_text" %><br />
+        <%= f.password_field :current_password, autocomplete: "new-password", class:"form-control sign_up_field", placeholder: 'Enter your Current Password' %>
+      </div>
+
+      <div class="actions text-center mt-4">
+        <%= f.submit "Update", class:"text-center sign_up_btn" %>
+      </div>
+    <% end %>
+
+    <div class= "text-center sign_up_link_btn mt-3" >
+      <%= link_to "Back", :back %>
+    <div>
   </div>
-  <div class="field">
-    <%= f.label :full_name , "Full Name*", class:"sign_up_field_text"%><br />
-    <%= f.text_field :full_name, autofocus: true, autocomplete: "full_name", class:"form-control sign_up_field", placeholder: 'Enter your Name' %>
-  </div>
- <div class="field mt-1">
-    <%= f.label :email, "Email*", class:"sign_up_field_text" %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"form-control sign_up_field ", placeholder: 'Enter your Email' %>
-  </div>
-
-  <div class="field mt-1">
-     <%= f.label :gender, "Gender*", class:"sign_up_field_text" %>
-    <br>
-    <span class="sign_up_field_text">   
-      <%= f.radio_button :gender, 'Male' %>
-      <%= f.label :gender, 'Male', :value => 'Male' %>
-    </span>
-    <span class=" ml-3">
-      <%= f.radio_button :gender, 'Female' %> 
-      <%= f.label :gender, 'Female', :value => 'Female' %>
-    </span>
-    <span class=" ml-3">
-      <%= f.radio_button :gender, 'Other' %>
-      <%= f.label :gender, 'Other', :value => 'Other' %>
-    </span>
-  </div>
-  <div class="field ">
-    <%= f.label :phone, "Phone*", class:"sign_up_field_text" %><br />
-    <%= f.text_field :phone, autofocus: true, autocomplete: "phone", class:"form-control sign_up_field text", placeholder: 'Enter your Phone' %>
-  </div>
-
-  <div class="field mt-1 text">
-    <%= f.label :proffesion, "Proffesion*", class:"sign_up_field_text" %><br />
-   <%= f.select :proffesion, options_for_select([["Select One", ""], "Student", "Work", "Office", "Home", "Other"]),{}, class:'form-control sign_up_field', id: "sign_up_field" %>
-  </div>  
-
-  <!--     <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-      <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
-    <% end %> -->
-
-  <div class="field mt-1">
-    <%= f.label :password, "Password*", class:"sign_up_field_text" %><br />
-    <%= f.password_field :password, autocomplete: "new-password", class:"form-control sign_up_field", placeholder: 'Enter your Password'  %>
-  </div>
-
-  <div class="field mt-1">
-    <%= f.label :password_confirmation, "Password Confirm*", class:"sign_up_field_text" %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password", class:"form-control sign_up_field", placeholder: 'Enter your Confirm Password' %>
-  </div>
-
-  <div class="field mt-1">
-    <%= f.label :current_password, "Current Password*", class:"sign_up_field_text" %><br />
-    <%= f.password_field :current_password, autocomplete: "new-password", class:"form-control sign_up_field", placeholder: 'Enter your Current Password' %>
-  </div>
-
-    <div class="actions text-center mt-4">
-      <%= f.submit "Update", class:"text-center sign_up_btn" %>
-    </div>
-  <% end %>
-
-  <div class= "text-center sign_up_link_btn mt-3" >
-    <%= link_to "Back", :back %>
-  <div>
 </div>
 
-
-<!--   <h3>Cancel my account</h3>
-   
-  <p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p> -->

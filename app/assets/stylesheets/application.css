@@ -1,3 +1,9 @@
+  
+
+
+// = require user/user.css
+
+
   :root {
     --main-back-color: #6658ea;
     --main-font-family:  'Inter';
@@ -441,8 +447,18 @@
     border: 1px solid var(--main-back-color);
     border-radius: 0px 40px
   }
-
-
+  #edit_page  #footer{
+    padding-top: 20px !important;
+    box-sizing: border-box !important;
+  /*  position: absolute;*/
+    background: #6658EA !important;
+    border: 3px solid #FFFFFF !important;
+    margin-top: 20px !important;
+    margin-left: 8px !important;
+   bottom: 0px !important;
+   width: 99% !important;
+   height: 190px !important;
+  }
   #edit_page h2 {
     font-family: var(--main-font-family);
     font-style: normal;

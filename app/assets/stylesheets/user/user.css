@@ -1,0 +1,99 @@
+.dashboard_image{
+	background-color: var(--main-back-color);
+	height: 200px;
+	width: 200px;
+	border-radius: 90%;
+}
+
+.dashabord h1{
+	font-size: 3rem;
+
+}
+
+.sidebar{
+  background-color: rgba(102, 88, 234, 0.15);
+} 
+
+.sidebar a{
+  color: black; !important;
+}
+
+.dashabord table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.dashabord th, td {
+  text-align: left;
+  padding: 8px;
+}
+
+ .dashabord tr:nth-child(even) {
+  background-color: rgba(102, 88, 234, 0.15);
+}
+
+
+.edit_in_btn_dashboard{
+    font-style: normal;
+    font-weight: 400; 
+    font-size: 20px;
+    padding-top: 5px;
+    background-color: var(--main-back-color);
+    height: 46px !important;
+    width: 110px !important;
+    box-shadow:  8px 6px 7px 1px #888888;
+    color: white;
+    border: none;
+    border-bottom-left-radius: 13px;
+    border-top-right-radius: 15px;
+    transition: 1s;
+}
+.edit_in_btn_dashboard:hover{
+    text-decoration: none;x`
+    font-style: normal;
+    font-weight: 400; 
+    padding-top: 5px;
+    font-size: 20px;
+    background-color: white;
+    height: 46px;
+    width: 110px;
+    box-shadow:  8px 6px 7px 1px var(--main-back-color);
+    color: var(--main-back-color);
+    border: none;
+    border-bottom-left-radius: 13px;
+    border-top-right-radius: 15px;
+    cursor: pointer;
+}
+
+.destroy_in_btn_dashboard{
+  font-style: normal;
+  font-weight: 400; 
+  font-size: 20px;
+  padding-top: 5px;
+  background-color: red;
+  height: 46px !important;
+  width: 110px !important;
+  box-shadow:  8px 6px 7px 1px #888888;
+  color: white;
+  border: none;
+  border-bottom-left-radius: 13px;
+  border-top-right-radius: 15px;
+  transition: 1s;
+}
+
+.destroy_in_btn_dashboard:hover{
+    text-decoration: none;
+    font-style: normal;
+    font-weight: 400; 
+    padding-top: 5px;
+    font-size: 20px;
+    background-color: white;
+    height: 46px;
+    width: 110px;
+    box-shadow:  8px 6px 7px 1px red;
+    color: red;
+    border: none;
+    border-bottom-left-radius: 13px;
+    border-top-right-radius: 15px;
+    cursor: pointer;
+}
