@@ -4,7 +4,11 @@ class ApplicationController < ActionController::Base
 
   def configure_permitted_parameters
     devise_parameter_sanitizer.permit(:sign_up) do |user_params|
-      user_params.permit([ :full_name, :phone, :gender, :proffesion, :email, :password, :password_confirmation, :current_password])
+      user_params.permit([ :image, :image_cache, :full_name, :phone, :gender, :proffesion, :email, :password, :password_confirmation, :current_password])
     end
+  end
+  
+  def after_sign_in_path_for(resource)
+    user_user_index_path 
   end
 end

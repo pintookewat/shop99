@@ -1,11 +1,4 @@
-<!--   <% if user_signed_in?  %> 
-<br>
-    <%= link_to "Log out",  destroy_user_session_path, :method => :delete,  class: 'btn btn-block btn-dark' %>
-
-<% else %>
-  <br>
-
-<% end %> -->
+<%= render "layouts/navbar" %>
 <div id="index">
   <div id="index_1">
     <div class="d-flex index_btn">
@@ -23,27 +16,31 @@
   </div>
 
   <div id="index_2">
-
+      <div class="d-flex mt-4">
+        <%= link_to "Find your", 'users/sign_up', class: 'sign_in_btn_index text-center' %>
+      </div>
+      
       <h6 class="text2">I will always love you with all my heart. People say they would love
        to have a wife that  <br> would do  anything for her husband.  I will always love you with all my heart. People say they would love<br>
        to have a wife that would do
       </h6>
-      
-      <div class="d-flex mt-4">
-        <%= link_to "Find your", 'users/sign_up', class: 'sign_in_btn_index text-center' %>
-      </div>
     <div id="image_background2" ></div>
-
-
   </div>
 </div>
 
 
 <div class="row footer_btn mt-5">
-  <div class="col-6 text-center">
-    <%= link_to "Login", user_session_path, class: 'btn' %>
+  <div class="col-4 text-center">
+    
   </div>
-  <div class="col-6 text-center">
-    <%= link_to "Registration", 'users/sign_up', class: 'btn' %>
+  <div class="col-4 d-flex">
+    <%= link_to "Login", user_session_path, class: 'btn ml-2' %>
+    <%= link_to "Registration", 'users/sign_up', class: 'btn ml-5' %>
+  </div>
+  <div class="col-4 text-center">
+    
   </div>
 </div>
+
+
+<%= render "layouts/footer" %>

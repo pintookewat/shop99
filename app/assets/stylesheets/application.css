@@ -1,3 +1,6 @@
+// = require user/user.css
+
+
   :root {
     --main-back-color: #6658ea;
     --main-font-family:  'Inter';
@@ -34,7 +37,7 @@
     margin-left: 68px;  
   }
 
-  #sign_up_field{
+/*  #sign_up_field{
     margin-left: 68px; 
     box-sizing: border-box;
     width: 323px !important;
@@ -42,7 +45,7 @@
     background: #FFFFFF;
     border: 1px solid black !important;
     border-radius: 0px 15px !important;
-  }
+  }*/
 
   #sign_up h2{
     font-family: var(--main-font-family);
@@ -185,7 +188,7 @@
   }
 
   .index_btn{
-    position: absolute;
+  position: absolute;
    margin-top: 280px;
    margin-left: 80px; 
   }
@@ -266,7 +269,7 @@
   }
 
   #index_2{
-      margin-top: 60px;
+      margin-top: 90px;
   }
 
   
@@ -331,9 +334,8 @@
 
 
   #footer{
-    padding-top: 20px;
     box-sizing: border-box;
-  /*  position: absolute;*/
+    position: relative;
     background: #6658EA;
     border: 3px solid #FFFFFF;
     margin-top: 20px;
@@ -429,3 +431,38 @@
       color: var(--main-back-color);
   }
   /*end Home page*/
+
+
+/*  devise edit page start*/
+  #edit_page {
+    margin-top: 40px;
+    margin-left: 451px;
+    box-sizing: border-box;
+    width: 459px;
+    height: 687px;
+    border: 1px solid var(--main-back-color);
+    border-radius: 0px 40px
+  }
+  #edit_page  #footer{
+    padding-top: 20px !important;
+    box-sizing: border-box !important;
+  /*  position: absolute;*/
+    background: #6658EA !important;
+    border: 3px solid #FFFFFF !important;
+    margin-top: 20px !important;
+    margin-left: 8px !important;
+   bottom: 0px !important;
+   width: 99% !important;
+   height: 190px !important;
+  }
+  #edit_page h2 {
+    font-family: var(--main-font-family);
+    font-style: normal;
+    font-weight: 400;
+    font-size: 28px;
+    line-height: 24px;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    color: var(--main-back-color);
+  }
+
+/*  devise edit page end*/
