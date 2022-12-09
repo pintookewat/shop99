@@ -7,7 +7,9 @@
 	<% @user.each do |user| %>
 		<div id="user_index">
 			<hr class="invisible">
-				<div class="user_image  text-center"></div>
+				<div class="text-center">
+					<%= image_tag current_user.image.url, class:"user_image" %> 
+				</div>
 				<div class=" user_text text-center">
 					<h5>Age: 20year</h5>
 					<h5>Location: Indore</h5>
