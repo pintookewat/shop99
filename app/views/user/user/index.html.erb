@@ -3,16 +3,17 @@
 <h1 class="text-center index_text mt-3">Welcome</h1>
 
 
-<div id="user_index">
-	<hr class="invisible">
-		<div class="user_image  text-center"></div>
-		<div class=" user_text text-center">
-			<h5>Age: 20year</h5>
-			<h5>Location: Indore</h5>
+ <div class="index_user "> 
+	<% @user.each do |user| %>
+		<div id="user_index">
+			<hr class="invisible">
+				<div class="user_image  text-center"></div>
+				<div class=" user_text text-center">
+					<h5>Age: 20year</h5>
+					<h5>Location: Indore</h5>
+				</div>
+				<hr>
+				<h3 class="text-center text-dark"><%= user.full_name %></h3>
 		</div>
-		<hr>
-		<h3 class="text-center">Apple.com</h3>
+	<% end %>
 </div>
-
-
-<%= render "layouts/footer" %>
