@@ -50,10 +50,10 @@
     <%= f.password_field :password_confirmation, autocomplete: "new-password", class:"form-control sign_up_field", placeholder: 'Enter your Confirm Password' %>
   </div>
 
-  <div class="field mt-1">
+<!--   <div class="field mt-1">
     <%= f.label :image, "Image", class:"sign_up_field_text" %><br />
     <%= f.file_field :image, autocomplete: "image", class:"form-control", placeholder: 'Enter your image' %>
-  </div>
+  </div> -->
 
 <br>
   <div class="actions text-center">
@@ -65,3 +65,5 @@
 <%= render "devise/shared/links" %>
 </div>
 </div>
+
+  <%= render "layouts/footer" %>
