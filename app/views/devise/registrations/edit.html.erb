@@ -4,9 +4,7 @@
     <h2  class= "text-center mt-2">Edit <%= resource_name.to_s.humanize %></h2>
 
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-      <div class="ml-2">
-      <!--     <%= render "devise/shared/error_messages", resource: resource %> -->
-      </div>
+     <%= render "devise/shared/error_messages", resource: resource %>
       <div class="field">
         <%= f.label :full_name , "Full Name*", class:"sign_up_field_text"%><br />
         <%= f.text_field :full_name, autofocus: true, autocomplete: "full_name", class:"form-control sign_up_field", placeholder: 'Enter your Name' %>
@@ -39,27 +37,27 @@
 
       <div class="field mt-1 text">
         <%= f.label :proffesion, "Proffesion*", class:"sign_up_field_text" %><br />
-       <%= f.select :proffesion, options_for_select([["Select One", ""], "Student", "Work", "Office", "Home", "Other"]),{}, class:'form-control sign_up_field', id: "sign_up_field" %>
+       <%= f.select :proffesion, options_for_select([["#{current_user.proffesion}", ""], "Student", "Work", "Office", "Home", "Other"]),{}, class:'form-control sign_up_field', id: "sign_up_field" %>
       </div>  
 
       <!--     <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
           <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
         <% end %> -->
 
-      <div class="field mt-1">
+<!--       <div class="field mt-1">
         <%= f.label :password, "Password*", class:"sign_up_field_text" %><br />
         <%= f.password_field :password, autocomplete: "new-password", class:"form-control sign_up_field", placeholder: 'Enter your Password'  %>
-      </div>
+      </div> -->
 
-      <div class="field mt-1">
+<!--      <div class="field mt-1">
         <%= f.label :password_confirmation, "Password Confirm*", class:"sign_up_field_text" %><br />
         <%= f.password_field :password_confirmation, autocomplete: "new-password", class:"form-control sign_up_field", placeholder: 'Enter your Confirm Password' %>
-      </div>
+      </div> -->
 
-      <div class="field mt-1">
+<!--       <div class="field mt-1">
         <%= f.label :current_password, "Current Password*", class:"sign_up_field_text" %><br />
         <%= f.password_field :current_password, autocomplete: "new-password", class:"form-control sign_up_field", placeholder: 'Enter your Current Password' %>
-      </div>
+      </div> -->
 
       <div class="actions text-center mt-4">
         <%= f.submit "Update", class:"text-center sign_up_btn" %>
@@ -72,5 +70,3 @@
   </div>
 </div>
 
-
-<%= render "layouts/footer" %>
