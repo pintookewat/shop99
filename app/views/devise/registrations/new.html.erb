@@ -51,9 +51,18 @@
     <%= f.password_field :password_confirmation, autocomplete: "new-password", class:"form-control sign_up_field", placeholder: 'Enter your Confirm Password' %>
   </div>
 
+  <div class="field ">
+    <%= f.label :age, "Age*", class:"sign_up_field_text" %><br />
+    <%= f.text_field :age, autofocus: true, autocomplete: "phone", class:"form-control sign_up_field text", placeholder: 'Enter your Age' %>
+  </div>
+
+  <div class="field ">
+    <%= f.label :location, "Location*", class:"sign_up_field_text" %><br />
+    <%= f.text_field :location, autofocus: true, autocomplete: "phone", class:"form-control sign_up_field text", placeholder: 'Enter your Location' %>
+  </div>
    <div class="field mt-1">
     <%= f.label :image, "Image", class:"sign_up_field_text" %><br />
-    <%= f.file_field :image, autocomplete: "image", class:"form-control", placeholder: 'Enter your image' %>
+    <%= f.file_field :image, autocomplete: "image", class:"sign_up_field", placeholder: 'Enter your image' %>
   </div>
 
 <br>
@@ -67,4 +76,7 @@
 </div>
 </div>
 
+<div class="d-flex align-content-end flex-wrap mb-2" >
   <%= render "layouts/footer" %>
+  
+</div>

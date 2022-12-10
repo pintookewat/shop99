@@ -10,7 +10,8 @@ gem "rails", "~> 7.0.4"
 gem "sprockets-rails"
 gem 'byebug'
 
-
+gem "mini_magick"
+gem 'figaro'
 # Use pg as the database for Active Record
 gem  'pg'
 
@@ -29,7 +30,6 @@ gem "stimulus-rails"
 
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem "jbuilder"
-gem 'jquery-validation-rails'
 gem 'carrierwave'
 
 # Use Redis adapter to run Action Cable in production
