@@ -40,24 +40,34 @@
        <%= f.select :proffesion, options_for_select([["#{current_user.proffesion}", ""], "Student", "Work", "Office", "Home", "Other"]),{}, class:'form-control sign_up_field', id: "sign_up_field" %>
       </div>  
 
-      <!--     <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-          <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
-        <% end %> -->
+      <!--     <%# if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+          <div>Currently waiting confirmation for: <%#= resource.unconfirmed_email %></div>
+        <%# end %> -->
 
 <!--       <div class="field mt-1">
-        <%= f.label :password, "Password*", class:"sign_up_field_text" %><br />
-        <%= f.password_field :password, autocomplete: "new-password", class:"form-control sign_up_field", placeholder: 'Enter your Password'  %>
+        <%#= f.label :password, "Password*", class:"sign_up_field_text" %><br />
+        <%#= f.password_field :password, autocomplete: "new-password", class:"form-control sign_up_field", placeholder: 'Enter your Password'  %>
       </div> -->
 
 <!--      <div class="field mt-1">
-        <%= f.label :password_confirmation, "Password Confirm*", class:"sign_up_field_text" %><br />
-        <%= f.password_field :password_confirmation, autocomplete: "new-password", class:"form-control sign_up_field", placeholder: 'Enter your Confirm Password' %>
+        <%#= f.label :password_confirmation, "Password Confirm*", class:"sign_up_field_text" %><br />
+        <%#= f.password_field :password_confirmation, autocomplete: "new-password", class:"form-control sign_up_field", placeholder: 'Enter your Confirm Password' %>
       </div> -->
 
-<!--       <div class="field mt-1">
+      <div class="field ">
+        <%= f.label :age, "Age*", class:"sign_up_field_text" %><br />
+        <%= f.text_field :age, autofocus: true, autocomplete: "phone", class:"form-control sign_up_field text", placeholder: 'Enter your Age' %>
+      </div>
+
+      <div class="field ">
+        <%= f.label :location, "Location*", class:"sign_up_field_text" %><br />
+        <%= f.text_field :location, autofocus: true, autocomplete: "phone", class:"form-control sign_up_field text", placeholder: 'Enter your Location' %>
+      </div>
+
+    <div class="field mt-1">
         <%= f.label :current_password, "Current Password*", class:"sign_up_field_text" %><br />
         <%= f.password_field :current_password, autocomplete: "new-password", class:"form-control sign_up_field", placeholder: 'Enter your Current Password' %>
-      </div> -->
+      </div> 
 
       <div class="actions text-center mt-4">
         <%= f.submit "Update", class:"text-center sign_up_btn" %>
@@ -70,3 +80,19 @@
   </div>
 </div>
 
+<%= render "layouts/footer" %>
+
+
+<style type="text/css">
+  
+    #footer{
+    background: #6658EA;
+    border: 3px solid #FFFFFF;
+    margin-top: 20px;
+    margin-left: -440px !important;
+    width: 1340px !important;
+    height: 190px;
+    }
+
+
+</style>

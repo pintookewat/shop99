@@ -115,9 +115,9 @@
 /*      margin-top: 30px;
       margin-left: 100px;*/
       float: left;
-       margin: 8px;
+      margin: 14px;
       height: 340px;
-      width: 320px;
+      width: 308px;
       box-shadow:  8px 6px 7px 1px #888888;
       color: white;
       border: none;
@@ -130,9 +130,9 @@
 /*      margin-top: 30px;
       margin-left: 100px;*/
       float: left;
-      margin: 8px;
+      margin: 14px;
       height: 340px;
-      width: 320px;
+      width: 308px;
       box-shadow:  rgba(102, 88, 234, 0.15);
       color: var(--main-back-color);
       border: none;
@@ -142,7 +142,7 @@
   }
   .user_image{
     margin-top: 2px !important;
-    margin-left: 85px;
+    margin-left: 20px;
     background-color: var(--main-back-color);
     height: 150px;
     width: 150px !important;
