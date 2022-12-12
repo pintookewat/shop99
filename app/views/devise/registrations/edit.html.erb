@@ -96,3 +96,25 @@
 
 
 </style>
+
+<script>
+  $(document).ready(function () {
+    $("#user_new").validate({
+    debug: true,
+      rules: {
+      'user[email]': {
+        required: true, 
+        email: true
+      },
+      'user[password]': {
+        required: true,
+         minlength: 6
+       },
+      'user[password_confirmation]': {
+        required: true,
+        equalTo: '#user_password'
+      }
+      }
+    });
+  });
+</script>
