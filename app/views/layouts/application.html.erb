@@ -12,6 +12,21 @@
   <body>
     <%= yield %>
   </body>
+   <script src="https://js.pusher.com/7.2/pusher.min.js"></script>
+  <script>
+
+    // Enable pusher logging - don't include this in production
+    Pusher.logToConsole = true;
+
+    var pusher = new Pusher('adf35b95fd8e72339892', {
+      cluster: 'ap2'
+    });
+
+    var channel = pusher.subscribe('my-channel');
+    channel.bind('my-event', function(data) {
+      alert(JSON.stringify(data));
+    });
+  </script>
   <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
 
   <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
