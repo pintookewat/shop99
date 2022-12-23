@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+
+  resources :chatrooms
+  resources :chats
+  get 'chat/dashboard', to: 'chats#index'
+  #root 'chatrooms#index'
+
   devise_for :users
   devise_scope :user do
     get '/users/sign_out' => 'devise/sessions#destroy'
