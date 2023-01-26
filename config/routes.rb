@@ -1,10 +1,6 @@
 Rails.application.routes.draw do
-  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
+  resources :qrcodes
 
-  resources :chatrooms
-  resources :chats
-  get 'chat/dashboard', to: 'chats#index'
-  #root 'chatrooms#index'
 
   devise_for :users
   devise_scope :user do

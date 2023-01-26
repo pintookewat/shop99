@@ -9,6 +9,7 @@
   gem 'figaro'
   gem  'pg'
   gem 'jquery-rails'
+  gem "rqrcode"
   gem 'devise'
   gem "puma", "~> 5.0"
   gem "importmap-rails"

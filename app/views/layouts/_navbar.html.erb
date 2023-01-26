@@ -2,22 +2,24 @@
 	<div class="row">
 		<div class="col-4 text-center ">
 			<% if user_signed_in?  %>
-				<%= link_to "Account", user_dashboard_path, class: 'text' %><br>
+			<%= link_to "Account", user_dashboard_path, class: 'text' %><br>
+			<% end %>
+			
+		</div>
+		
+		<div class="col-4 text-center">
+			<% if user_signed_in?  %>
+			<%= link_to "Apple.com", user_user_index_path, class: 'text'  %><br>
+			<%= link_to "Qr code", new_qrcode_path, class: 'text' %><br>
+			<% else %>
+			<%= link_to "Apple.com", '/', class: 'text' %><br>
 			<% end %>
 		</div>
 		
 		<div class="col-4 text-center">
 			<% if user_signed_in?  %>
-			  <%= link_to "Apple.com", user_user_index_path, class: 'text'  %>
-			<% else %> 
-				<%= link_to "Apple.com", '/', class: 'text' %><br>
+			<%= link_to "Log out",  destroy_user_session_path, :method => :delete,  class: 'text' %>
 			<% end %>
-		</div>
-    
-    <div class="col-4 text-center">
-    	<% if user_signed_in?  %> 
-      	<%= link_to "Log out",  destroy_user_session_path, :method => :delete,  class: 'text' %>
-		<% end %>
 		</div>
 	</div>
 </div>

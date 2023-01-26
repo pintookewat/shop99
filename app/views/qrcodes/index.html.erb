@@ -1,0 +1,16 @@
+<div class="container-fluid">
+<p style="color: green"><%= notice %></p>
+
+<h1 class="text-center">Qrcodes</h1>
+
+<div id="qrcodes">
+  <% @qrcodes.each do |qrcode| %>
+    <%= render qrcode %>
+    <p>
+      <%= link_to "Show this qrcode", qrcode %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New qrcode", new_qrcode_path %>
+</div>
