@@ -37,8 +37,24 @@
       filepath = "/uploads/qr_image/#{Time.now.to_i}.png"
       IO.binwrite('public' + filepath, png.to_s)
 
+
+      img = Magick::ImageList.new('public' + filepath)
+
+      text = Magick::Draw.new
+      message = "#{params[:qrcode][:name]}"
+
+      img.annotate(text, 0,0,0,0, message) do
+        text.gravity = Magick::SouthGravity # Text positioning
+        text.pointsize = 30 # Font size
+        text.fill = "#{params[:qrcode][:color]}" # Font color
+        text.font = "/absolutepath/Font.ttf" # Font file; needs to be absolute
+        img.format = "png"
+      end
+
+      img.write("public" + filepath) # Destination image
+
       if qrcode.update(image: filepath)
-        redirect_to  user_user_index_path
+        redirect_to  "/qrcodes"
         
       else
         redirect_to new_qrcode_path
@@ -51,7 +67,7 @@
        @qrcode = Qrcode.find(params[:id])
      
         if @qrcode.update(qrcode_params)
-            redirect_to user_user_index_path
+            redirect_to  "/qrcodes"
         else
           redirect_to edit_qrcode_path
         end
@@ -62,7 +78,7 @@
     def destroy_qr
       @qrcode = Qrcode.find(params[:qrcode_id])
       @qrcode.destroy
-      redirect_to user_user_index_path
+      redirect_to  "/qrcodes"
     end
 
     private
