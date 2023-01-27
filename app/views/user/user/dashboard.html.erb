@@ -1,22 +1,13 @@
 <%= render "layouts/navbar" %>
 <div class="d-flex">
   <%= render "layouts/side_navbar" %>
-  <div>
-    <div class="dashabord">
-      <div class="row mt-5">
-        
-        <div class="col-5">
-          <div class="ml-5">
-            <%#= image_tag current_user.image.url, class:"dashboard_image" %>
-          </div>
-        </div>
-        <div class="col-5">
-          <h1 class="">Hello</h1>
-          <h1 class=""><%= current_user.full_name %></h1>
-          <div class="d-flex">
-            <%= link_to "Edit", edit_user_registration_path, class: 'edit_in_btn_dashboard mt-3 text-center mr-5', onclick:"return confirm('Are you sure Edit?')" %>
-            <%= link_to "Delete", users_sign_out_path, class: 'destroy_in_btn_dashboard mt-3 text-center ml-5', onclick:"return confirm('Are you sure Delete your Account')"%>
-          </div>
+  <div class="dashabord" style="margin-left: 200px;">
+    <div class="row mt-5">
+      <div class="col-12">
+        <h1 class="">Hello</h1>
+        <h1 class=""><%= current_user.full_name %></h1>
+        <div class="d-flex">
+          <%= link_to "Edit", edit_user_registration_path, class: 'edit_in_btn_dashboard mt-3 text-center mr-5', onclick:"return confirm('Are you sure Edit?')" %>
         </div>
       </div>
       <table class="mt-5">
@@ -49,9 +40,4 @@
       </table>
     </div>
   </div>
-</main>
-</div>
-</div>
-</div>
-
 </div>
