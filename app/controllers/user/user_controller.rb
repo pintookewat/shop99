@@ -3,7 +3,7 @@ class User::UserController < ApplicationController
   
   def index
     # @user = User.where.not(:id=>current_user.id)
-    @qrcode = current_user.qrcodes
+    
   end
 
   

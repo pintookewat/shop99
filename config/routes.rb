@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  resources :qrcodes
+  resources :qrcodes do
+    get :destroy_qr
+   end 
 
 
   devise_for :users

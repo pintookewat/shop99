@@ -1,4 +1,6 @@
 // = require user/user.css
+// = require user/sb-admin-2.css
+// = require user/sb-admin-2.min.css
   :root {
     --main-back-color: #6658ea;
     --main-font-family:  'Inter';

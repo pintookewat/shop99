@@ -1,7 +1,7 @@
   class QrcodesController < ApplicationController
    
     def index
-      @qrcodes = Qrcode.all
+      @qrcode = current_user.qrcodes
     end
 
 
@@ -14,6 +14,7 @@
 
 
     def edit
+      @qrcode = Qrcode.find(params[:id])
     end
 
 
@@ -36,13 +37,11 @@
       filepath = "/uploads/qr_image/#{Time.now.to_i}.png"
       IO.binwrite('public' + filepath, png.to_s)
 
-
-      
-        if qrcode.update(image: filepath)
-          redirect_to  user_user_index_path
-          
-        else
-          redirect_to new_qrcode_path
+      if qrcode.update(image: filepath)
+        redirect_to  user_user_index_path
+        
+      else
+        redirect_to new_qrcode_path
       end
 
     end
@@ -50,27 +49,20 @@
 
     def update
        @qrcode = Qrcode.find(params[:id])
-      respond_to do |format|
+     
         if @qrcode.update(qrcode_params)
-          format.html { redirect_to qrcode_url(@qrcode), notice: "Qrcode was successfully updated." }
-          format.json { render :show, status: :ok, location: @qrcode }
+            redirect_to user_user_index_path
         else
-          format.html { render :edit, status: :unprocessable_entity }
-          format.json { render json: @qrcode.errors, status: :unprocessable_entity }
+          redirect_to edit_qrcode_path
         end
-      end
+
     end
 
     # DELETE /qrcodes/1 or /qrcodes/1.json
-    def destroy
-      binding.break
-      @qrcode = Qrcode.find(params[:id])
+    def destroy_qr
+      @qrcode = Qrcode.find(params[:qrcode_id])
       @qrcode.destroy
-
-      # respond_to do |format|
-      #   format.html { redirect_to qrcodes_url, notice: "Qrcode was successfully destroyed." }
-      #   format.json { head :no_content }
-      # end
+      redirect_to user_user_index_path
     end
 
     private

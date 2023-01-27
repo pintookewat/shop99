@@ -1,43 +1,14 @@
 <%= render "layouts/navbar" %>
-<div>
-	<h4 class=" mt-3  text-center">Welcome <%= current_user.full_name %> </h4>
-	 <div class="index_user  mt-4"> 
-	 	<% if  @qrcode.present? %>
-			<% @qrcode.each do |qrcode| %>
-			<%# binding.break %>
-				<div id="user_index">
-					<hr class="invisible">
-						<div class="text-center">
-							<%= image_tag qrcode.image, class: "user_image" %> 
-						</div>
-						<div class=" user_text text-center">
-							<h5>Name: <%= qrcode.name.titleize %></h5>
-							<h5>Location: <%= qrcode.location.titleize %> </h5>
-						</div>
-						<hr>
-						<div class="d-flex">
-						<a  href="<%= qrcode.image %>", class="btn-secondary btn ml-4", download> Download</a>
-						<%= link_to "Edit Qr", edit_qrcode_path(qrcode), class: "btn btn-info ml-2", onclick:"return confirm('Are you sure Edit')" %>
-						<%= link_to "Destroy ", qrcode_path(qrcode), method: :delete, class: "btn btn-danger ml-2" %>
-						</div>
-				</div>
-				<%= render "layouts/footer" %>
-			<% end %>
-			<% else %>
-			<h1 class="text-center text-info">No Qr Present</h1>
-			<%  end %>
-	</div>
-
-
+<%#= render "layouts/footer" %>
 <style>
-    #footer{
-    display: flex;
-    align-content:end;
-    background: #6658EA;
-    border: 3px solid #FFFFFF;
-    margin-top: 20px;
-    margin-left: 8px;
-    width: 99% !important;
-    height: 190px;
-    }
+#footer{
+display: flex;
+align-content:end;
+background: #6658EA;
+border: 3px solid #FFFFFF;
+margin-top: 20px;
+margin-left: 8px;
+width: 99% !important;
+height: 190px;
+}
 </style>
