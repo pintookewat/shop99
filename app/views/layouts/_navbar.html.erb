@@ -9,7 +9,7 @@
 		
 		<div class="col-4 text-center">
 			<% if user_signed_in?  %>
-			<%= link_to "Apple.com", user_user_index_path, class: 'text'  %><br>
+			<%= link_to "Apple.com", "/user/user", class: 'text'  %><br>
 			<% else %>
 			<%= link_to "Apple.com", '/', class: 'text' %><br>
 			<% end %>

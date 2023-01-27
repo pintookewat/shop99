@@ -116,7 +116,7 @@
       margin-left: 100px;*/
       float: left;
       margin: 14px;
-      height: 340px;
+      height: 390px;
       width: 308px;
       box-shadow:  8px 6px 7px 1px #888888;
       color: white;
@@ -131,7 +131,7 @@
       margin-left: 100px;*/
       float: left;
       margin: 14px;
-      height: 340px;
+      height: 390px;
       width: 308px;
       box-shadow:  rgba(102, 88, 234, 0.15);
       color: var(--main-back-color);
@@ -144,8 +144,8 @@
     margin-top: 2px !important;
     margin-left: 20px;
     background-color: var(--main-back-color);
-    height: 150px;
-    width: 150px !important;
+    height: 200px;
+    width: 200px !important;
     border-radius: 10%;
   }
   .user_text{
