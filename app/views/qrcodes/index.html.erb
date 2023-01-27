@@ -2,6 +2,7 @@
 <div class="d-flex">
   <%= render "layouts/side_navbar" %>
   <div>
+    <a class="btn   btn-info text-center ml-2 mt-1" href="/qrcodes/new">Create Qrcode</a>
     <div class="index_user  mt-4">
       <% if  @qrcode.present? %>
       <% @qrcode.each do |qrcode| %>

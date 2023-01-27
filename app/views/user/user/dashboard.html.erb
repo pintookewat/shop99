@@ -1,43 +1,44 @@
 <%= render "layouts/navbar" %>
-<div class="d-flex">
-  <%= render "layouts/side_navbar" %>
-  <div class="dashabord" style="margin-left: 200px;">
-    <div class="row mt-5">
-      <div class="col-12">
-        <h1 class="">Hello</h1>
-        <h1 class=""><%= current_user.full_name %></h1>
-        <div class="d-flex">
-          <%= link_to "Edit", edit_user_registration_path, class: 'edit_in_btn_dashboard mt-3 text-center mr-5', onclick:"return confirm('Are you sure Edit?')" %>
-        </div>
+<div class="row">
+  <div class="col-1">
+    
+    <%= render "layouts/side_navbar" %>
+  </div>
+  <div class="col-10">
+    <div class="dashabord" style="margin-left: 200px;">
+      <div class="mt-5">
+        <table class="mt-5">
+          <tr>
+          </tr>
+          <tr>
+            <td>Email</td>
+            <td><%= current_user.email %></td>
+          </tr>
+          <tr>
+            <td>Gender</td>
+            <td><%= current_user.gender %></td>
+          </tr>
+          <tr>
+            <td>Proffesion</td>
+            <td><%= current_user.proffesion %></td>
+          </tr>
+          <tr>
+            <td>Phone</td>
+            <td><%= current_user.phone %></td>
+          </tr>
+          <tr>
+            <td>Age</td>
+            <td><%= current_user.age %> Year</td>
+          </tr>
+          <tr>
+            <td>Location</td>
+            <td><%= current_user.location %></td>
+          </tr>
+        </table>
       </div>
-      <table class="mt-5">
-        <tr>
-        </tr>
-        <tr>
-          <td>Email</td>
-          <td><%= current_user.email %></td>
-        </tr>
-        <tr>
-          <td>Gender</td>
-          <td><%= current_user.gender %></td>
-        </tr>
-        <tr>
-          <td>Proffesion</td>
-          <td><%= current_user.proffesion %></td>
-        </tr>
-        <tr>
-          <td>Phone</td>
-          <td><%= current_user.phone %></td>
-        </tr>
-        <tr>
-          <td>Age</td>
-          <td><%= current_user.age %> Year</td>
-        </tr>
-        <tr>
-          <td>Location</td>
-          <td><%= current_user.location %></td>
-        </tr>
-      </table>
+      <div class="d-flex text-center">
+      <%= link_to "Edit", edit_user_registration_path, class: 'edit_in_btn_dashboard mt-3 text-center mr-5', onclick:"return confirm('Are you sure Edit?')" %>
+    </div>
     </div>
   </div>
 </div>
