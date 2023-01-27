@@ -1,34 +1,14 @@
 <%= render "layouts/navbar" %>
-<div>
-	<h4 class=" mt-3  text-center">Welcome <%= current_user.full_name %> </h4>
-	 <div class="index_user  mt-4"> 
-		<% @user.each do |user| %>
-			<div id="user_index">
-				<hr class="invisible">
-					<div class="text-center">
-						<%= image_tag current_user.image.url, class:"user_image" %> 
-					</div>
-					<div class=" user_text text-center">
-						<h5>Age: <%= current_user.age %> Year</h5>
-						<h5>Location: <%= current_user.location %> </h5>
-					</div>
-					<hr>
-					<h3 class="text-center text-dark"><%= user.full_name %></h3>
-			</div>
-		<% end %>
-	</div>
-
-<%= render "layouts/footer" %>
+<%#= render "layouts/footer" %>
 <style>
-    #footer{
-    flex-wrap: wrap;
-    display: flex;
-    align-content:end;
-    background: #6658EA;
-    border: 3px solid #FFFFFF;
-    margin-top: 20px;
-    margin-left: 8px;
-    width: 99% !important;
-    height: 190px;
-    }
+#footer{
+display: flex;
+align-content:end;
+background: #6658EA;
+border: 3px solid #FFFFFF;
+margin-top: 20px;
+margin-left: 8px;
+width: 99% !important;
+height: 190px;
+}
 </style>

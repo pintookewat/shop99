@@ -20,7 +20,7 @@
 
 .dashabord table {
   border-collapse: collapse;
-  width: 100%;
+/*  width: 100%;*/
 }
 
 .dashabord th, td {
@@ -146,7 +146,7 @@
     background-color: var(--main-back-color);
     height: 150px;
     width: 150px !important;
-    border-radius: 80%;
+    border-radius: 10%;
   }
   .user_text{
    margin-top: 10px;

@@ -7,7 +7,7 @@
 default: &default
   adapter: postgresql
   encoding: UTF-8 
-  database: postgres
+  database: member
   pool: 5
   timeout: 5000
   host: localhost
@@ -19,7 +19,7 @@ default: &default
 development:
   adapter: postgresql
   encoding: unicode
-  database: postgres
+  database: member
   pool: 5
   username: postgres
   password: 1234
@@ -30,7 +30,7 @@ development:
 test:
   adapter: postgresql
   encoding: unicode
-  database: postgres
+  database: member
   pool: 5
   username: postgres
   password: 1234
@@ -38,7 +38,7 @@ test:
 production:
   adapter: postgresql
   encoding: unicode
-  database: postgres
+  database: member
   pool: 5
   username: postgres
   password: 1234
