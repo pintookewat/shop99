@@ -1,5 +1,6 @@
-  class QrcodesController < ApplicationController
-   
+class QrcodesController < ApplicationController
+   require 'RMagick'
+   include Magick
     def index
       @qrcode = current_user.qrcodes
     end
@@ -50,15 +51,28 @@
         text.font = "/absolutepath/Font.ttf" # Font file; needs to be absolute
         img.format = "png"
       end
+      # Add images on png
+    # image_path = Rails.root.join('public' + filepath)
+    # image = Magick::Image.read(image_path).first
+    # width = image.columns
+    # height = image.rows
+    # gradient = Magick::Image.read('gradient:rgba(0,0,0,0.0)-rgba(0,0,0,0.0)') do |img|
+    #   img.size = "10x10"
+    # end.first
+    # image = image.composite(gradient, 0, 0, OverCompositeOp)
+    # image2_path = "https://picsum.photos/200/300"
+    # image2 = Magick::Image.read(image2_path).first
+    # image = image.composite(image2, CenterGravity, -10, 70, OverCompositeOp)
 
-      img.write("public" + filepath) # Destination image
 
-      if qrcode.update(image: filepath)
-        redirect_to  "/qrcodes"
-        
-      else
-        redirect_to new_qrcode_path
-      end
+    img.write("public" + filepath) # Destination ix`mage
+
+    if qrcode.update(image: filepath)
+      redirect_to  "/qrcodes"
+      
+    else
+      redirect_to new_qrcode_path
+    end
 
     end
 
@@ -90,4 +104,4 @@
       def qrcode_params
         params.require(:qrcode).permit(:name,  :location, :user_id)
       end
-  end
+end
