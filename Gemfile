@@ -21,6 +21,8 @@
   gem "bootsnap", require: false
   gem "sassc-rails"
   gem 'rmagick'
+  gem 'stripe'
+  gem "dotenv-rails"
 
   group :development, :test do
     gem "debug", platforms: %i[ mri mingw x64_mingw ]
