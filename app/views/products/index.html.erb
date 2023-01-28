@@ -1,0 +1,35 @@
+<%= render "layouts/navbar" %>
+<div class="row">
+  <div class="col-2">
+    
+    <%= render "layouts/side_navbar" %>
+  </div>
+  <div class="col-9">
+    <a class="btn   btn-info text-center ml-3 mt-1" href="/products/new">Create Product</a>
+    <div class="index_user  mt-4">
+      <% if  @products.present? %>
+      <% @products.each do |product| %>
+      <%# binding.break %>
+      <div id="user_index">
+        <hr class="invisible">
+        <div class="text-center">
+          <div class="user_image mr-5"></div>
+        </div>
+        <div class=" user_text text-center">
+          <h5>Name: <%= product.name.titleize %></h5>
+          <h5>Price: <%= product.price %> </h5>
+        </div>
+        <hr>
+        <div class="d-flex justify-content-around">
+          <%= link_to "Edit Qr", edit_product_path(product), class: "btn btn-info ml-2" %>
+          <%= link_to "Destroy ", product_destroy_product_path(product), method: :delete, class: "btn btn-danger ml-2" %>
+        </div>
+      </div>
+      <% end %>
+      <% else %>
+      <h1 class="text-center text-info">No Product Present</h1>
+      <%  end %>
+    </div>
+  </div>
+  <%= render "layouts/footer" %>
+</div>

@@ -1,0 +1,47 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  price_id: MyString
+  object: MyString
+  string: MyString
+  active: MyString
+  boolean: MyString
+  created: MyString
+  integer: MyString
+  currency: MyString
+  string: MyString
+  livemode: MyString
+  string: MyString
+  default_price: MyString
+  string: MyString
+  product_id: MyString
+  string: MyString
+  interval: MyString
+  string: MyString
+  payment_type: MyString
+  string: MyString
+  interval_count: MyString
+  string: MyString
+
+two:
+  price_id: MyString
+  object: MyString
+  string: MyString
+  active: MyString
+  boolean: MyString
+  created: MyString
+  integer: MyString
+  currency: MyString
+  string: MyString
+  livemode: MyString
+  string: MyString
+  default_price: MyString
+  string: MyString
+  product_id: MyString
+  string: MyString
+  interval: MyString
+  string: MyString
+  payment_type: MyString
+  string: MyString
+  interval_count: MyString
+  string: MyString

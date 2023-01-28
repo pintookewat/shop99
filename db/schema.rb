@@ -10,9 +10,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_01_28_130149) do
+ActiveRecord::Schema[7.0].define(version: 2023_01_28_200424) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "products", force: :cascade do |t|
+    t.string "product_id"
+    t.string "default_price"
+    t.string "description"
+    t.string "images"
+    t.integer "price"
+    t.string "name"
+    t.string "payment_id"
+    t.string "object"
+    t.boolean "active"
+    t.string "boolean"
+    t.string "url"
+    t.string "price_id"
+    t.string "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "qrcodes", force: :cascade do |t|
     t.string "name"
@@ -22,23 +40,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_28_130149) do
     t.datetime "updated_at", null: false
     t.integer "user_id"
     t.integer "color"
-  end
-
-  create_table "qrs", force: :cascade do |t|
-    t.string "name"
-    t.string "image"
-    t.text "location"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "shops", force: :cascade do |t|
-    t.string "name"
-    t.integer "price"
-    t.string "descripition"
-    t.string "image"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
