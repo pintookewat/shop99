@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :shops
   resources :qrcodes do
     get :destroy_qr
    end 
