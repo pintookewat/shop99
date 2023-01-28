@@ -1,38 +1,41 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: %i[ show edit update destroy ]
+  before_action :stripe_api, only: %i[ create  update ]
 
-  # GET /products or /products.json
+
   def index
     @products = Product.all
   end
 
-  # GET /products/1 or /products/1.json
   def show
   end
 
-  # GET /products/new
+
   def new
     @product = Product.new
   end
 
-  # GET /products/1/edit
+
   def edit
   end
 
-  # POST /products or /products.json
+
   def create
-    @product = current_user.products.create(product_params)
+    byebug
+    product = current_user.products.create(product_params)
 
+   Stripe::Product.create({name: 'Gold Special'})
+  # Stripe::Product.retrieve('prod_NFp4Uva9N9piKN')
 
-      if @product.save
-       redirect_to "/products"
-      else
-        redirect_to "/products/new"
-      end
+    if product.update(product_id: "pintoo" )
+     redirect_to "/products"
+    else
+      redirect_to "/products/new"
+    end
 
   end
 
-  # PATCH/PUT /products/1 or /products/1.json
+
   def update
     respond_to do |format|
       if @product.update(product_params)
@@ -43,7 +46,6 @@ class ProductsController < ApplicationController
     end
   end
 
-  # DELETE /products/1 or /products/1.json
   def destroy_product
       @product = Product.find(params[:product_id])
       @product.destroy
@@ -51,13 +53,16 @@ class ProductsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
+   
     def set_product
       @product = Product.find(params[:id])
     end
 
-    # Only allow a list of trusted parameters through.
+    def stripe_api
+    Stripe.api_key = ENV["STRIPE_SECRET_KEY"]
+    end
+
     def product_params
-      params.require(:product).permit(:product_id, :product_id,  :default_price, :description, :images,  :price, :name,  :payment_id,  :object,  :url, :price_id, :user_id)
+      params.require(:product).permit(:product_id,  :default_price, :description, :images,  :price, :name,  :payment_id,  :object,  :url, :price_id, :user_id)
     end
 end
