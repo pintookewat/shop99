@@ -30,15 +30,14 @@
     </div>
     <div class="text-center">
       <% if params[:action] == 'new' %>
-      <%= form.submit "Create", class: "sign_in_btn_index text-center  ml-5" %>
+      <%= form.submit "Create", class: "btn bg-gradient-info text-center  ml-5" %>
       <% else %>
-      <%= form.submit "Update", class: "sign_in_btn_index text-center mt-2 ml-5" %>
+      <%= form.submit "Update", class: "btn bg-gradient-info text-center mt-2 ml-5" %>
       <% end %>
     </div>
     <% end %>
   </div>
 </div>
-<%= render "layouts/footer" %>
 </div>
 
 
