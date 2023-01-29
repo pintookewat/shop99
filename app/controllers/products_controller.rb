@@ -21,7 +21,6 @@ class ProductsController < ApplicationController
 
 
   def create
-    byebug
     product = current_user.products.create(product_params)
 
    Stripe::Product.create({name: 'Gold Special'})

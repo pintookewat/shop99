@@ -1,8 +1,9 @@
-<%= render "layouts/navbar" %>
-<div class="d-flex">
+<div class="row">
+  <div class="col-2">
   <%= render "layouts/side_navbar" %>
-  <div>
-    <a class="btn   btn-info text-center ml-3 mt-1" href="/qrcodes/new">Create Qrcode</a>
+</div>
+<div class="col-10">
+  <a class="btn   btn-info text-center ml-3 mt-1" href="/qrcodes/new">Create Qrcode</a>
     <div class="index_user  mt-4 ml-3">
       <% if  @qrcode.present? %>
       <% @qrcode.each do |qrcode| %>
@@ -28,17 +29,4 @@
       <h1 class="text-center text-info">No Qr Present</h1>
       <%  end %>
     </div>
-  </div>
 </div>
-<style>
-#footer{
-display: flex;
-align-content:end;
-background: #6658EA;
-border: 3px solid #FFFFFF;
-margin-top: 20px;
-margin-left: 8px;
-width: 99% !important;
-height: 190px;
-}
-</style>

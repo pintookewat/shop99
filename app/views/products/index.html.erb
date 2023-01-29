@@ -1,16 +1,14 @@
-<%= render "layouts/navbar" %>
 <div class="row">
   <div class="col-2">
-    
     <%= render "layouts/side_navbar" %>
   </div>
-  <div class="col-9">
+  <div class="col-9 ml-4">
     <a class="btn   btn-info text-center ml-3 mt-1" href="/products/new">Create Product</a>
     <div class="index_user  mt-4">
       <% if  @products.present? %>
       <% @products.each do |product| %>
       <%# binding.break %>
-      <div id="user_index">
+      <div id="user_prduct">
         <hr class="invisible">
         <div class="text-center">
           <div class="user_image mr-5"></div>
@@ -31,5 +29,37 @@
       <%  end %>
     </div>
   </div>
-  <%= render "layouts/footer" %>
+  
 </div>
+<style type="text/css">
+     #user_prduct{
+      background-color: rgba(102, 88, 234, 0.15);
+/*      margin-top: 30px;
+      margin-left: 100px;*/
+      float: left;
+      margin: 13px;
+      height: 340px;
+      width: 308px;
+      box-shadow:  8px 6px 7px 1px #888888;
+      color: white;
+      border: none;
+      border-bottom-left-radius: 13px;
+      border-top-right-radius: 15px;
+      transition: 1s;
+  }
+  #user_prduct:hover{
+      background-color: white;
+/*      margin-top: 30px;
+      margin-left: 100px;*/
+      float: left;
+      margin: 13px;
+      height: 340px;
+      width: 308px;
+      box-shadow:  rgba(102, 88, 234, 0.15);
+      color: var(--main-back-color);
+      border: none;
+      border-bottom-left-radius: 13px;
+      border-top-right-radius: 15px;
+      cursor: pointer;
+  }
+</style>

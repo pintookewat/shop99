@@ -1,7 +1,5 @@
-<%= render "layouts/navbar" %>
 <div class="row">
   <div class="col-2">
-    
     <%= render "layouts/side_navbar" %>
   </div>
   <div class="col-9 ml-5 mt-5">
@@ -22,11 +20,11 @@
       <%= form.text_field :name, placeholder: 'Enter your Name', autofocus: true, autocomplete: "email",class:"form-control" %>
     </div>
     <div>
-      <%= form.label :price, style: "display: block" %>
+      <%= form.label :price, class: "mt-2", style: "display: block" %>
       <%= form.text_field :price, placeholder: 'Enter your Price', autofocus: true, autocomplete: "email",class:"form-control" %>
     </div>
     <div>
-      <%= form.label :description, style: "display: block" %>
+      <%= form.label :description, class: "mt-2", style: "display: block" %>
       <%= form.text_field :description, placeholder: 'Enter your Description', autofocus: true, autocomplete: "email",class:"form-control" %>
     </div>
     <div>
@@ -34,17 +32,16 @@
       <%= form.select :object, options_for_select([["Select One", ""], "Groceries", "Toys", "House Hold", "Daily use", "Other"]),{}, class:'form-control' %>
     </div>
     <div>
-      <%= form.label :images, style: "display: block" %>
+      <%= form.label :images, class: "mt-2", style: "display: block" %>
       <%= form.file_field :images, placeholder: 'image', autofocus: true, autocomplete: "email",class:"form-control" %>
     </div>
     <div class="text-center mt-4">
       <% if params[:action] == 'new' %>
-      <%= form.submit "Create", class: "sign_in_btn_index text-center  ml-5" %>
+      <%= form.submit "Create", class: "btn bg-gradient-info text-center  ml-5" %>
       <% else %>
-      <%= form.submit "Update", class: "sign_in_btn_index text-center mt-2 ml-5" %>
+      <%= form.submit "Update", class: "btn bg-gradient-info text-center mt-2 ml-5" %>
       <% end %>
     </div>
     <% end %>
   </div>
 </div>
-<%= render "layouts/footer" %>

@@ -1,34 +1,230 @@
-<%= render "layouts/navbar" %>
-<div id="sign_in">
-  <h2 class="text-center">Log in</h2>
+<body class="" cz-shortcut-listen="true">
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NKDMSK6" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
-  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+<div class="container position-sticky z-index-sticky top-0">
+<div class="row">
+
+</div>
+</div>
+<main class="main-content mt-0 ps">
+<section>
+<div class="page-header min-vh-75">
+<div class="container">
+<div class="row">
+<div class="col-xl-4 col-lg-5 col-md-6 d-flex flex-column mx-auto">
+<div class="card card-plain mt-3">
+<div class="card-header pb-0 text-left bg-transparent">
+<h3 class="font-weight-bolder text-info text-gradient">Welcome back</h3>
+<p class="mb-0">Enter your email and password to sign in</p>
+</div>
+<div class="card-body">
+
+ <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
     <div class="field">
-      <%= f.label :email, "Email*", class:"sign_up_field_text" %>
-      <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: 'Enter your Email', class:"form-control sign_up_field"  %>
+      <%= f.label :email, "Email*" %>
+      <div class="mb-3">
+      <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: 'Enter your Email', class:"form-control"  %>
+      </div>
     </div>
 
-    <div class="field mt-2">
-      <%= f.label :password, "Password*", class:"sign_up_field_text" %><br />
-      <%= f.password_field :password, autocomplete: "current-password", placeholder: 'Enter your Password', class:"form-control sign_up_field"  %>
+    <div class="mb-2">
+    <%= f.label :password, "Password*"%>
+      <%= f.password_field :password, autocomplete: "current-password", placeholder: 'Enter your Password', class:"form-control"  %>
     </div>
 
     <% if devise_mapping.rememberable? %>
-      <div class="field text-center mt-2">
-        <%= f.check_box :remember_me %>
-        <%= f.label :remember_me %>
+      <div class="form-check form-switch">
+        <%= f.check_box :remember_me, class: "form-check-input ml-2" %>
+        <%= f.label :remember_me, class: 'form-check-label' %>
       </div>
     <% end %>
 
     <div class="actions text-center">
-      <%= f.submit "Log in", class:"text-center sign_up_btn" %>
+      <%= f.submit "Sign in", class:"btn bg-gradient-info w-100 mt-4 mb-0" %>
     </div>
   <% end %>
-  <div class= "text-center sign_up_link_btn mt-3" >
+  <div class= "text-center   mt-3" >
   <%= render "devise/shared/links" %>
   </div>
 
-  </div>
+</div>
+<div class="card-footer text-center pt-0 px-lg-2 px-1">
+
+</div>
+</div>
+</div>
+<div class="col-md-6">
+<div class="oblique position-absolute top-0 h-100 d-md-block d-none me-n8">
+<div class="oblique-image bg-cover position-absolute fixed-top ms-auto h-100 z-index-0 ms-n6" id="signin_image"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<div class="ps__rail-x" style="left: 0px; bottom: 0px;"><div class="ps__thumb-x" tabindex="0" style="left: 0px; width: 0px;"></div></div><div class="ps__rail-y" style="top: 0px; right: 0px;"><div class="ps__thumb-y" tabindex="0" style="top: 0px; height: 0px;"></div></div></main>
 
 
-  <%= render "layouts/footer" %>
+
+<script src="../assets/js/core/popper.min.js"></script>
+<script src="../assets/js/core/bootstrap.min.js"></script>
+<script src="../assets/js/plugins/perfect-scrollbar.min.js"></script>
+<script src="../assets/js/plugins/smooth-scrollbar.min.js"></script>
+<script>
+    var win = navigator.platform.indexOf('Win') > -1;
+    if (win && document.querySelector('#sidenav-scrollbar')) {
+      var options = {
+        damping: '0.5'
+      }
+      Scrollbar.init(document.querySelector('#sidenav-scrollbar'), options);
+    }
+  </script>
+
+<script async="" defer="" src="https://buttons.github.io/buttons.js"></script>
+
+<script src="../assets/js/soft-ui-dashboard.min.js?v=1.0.7"></script>
+<script defer="" src="https://static.cloudflareinsights.com/beacon.min.js/vaafb692b2aea4879b33c060e79fe94621666317369993" integrity="sha512-0ahDYl866UMhKuYcW078ScMalXqtFJggm7TmlUtp0UlD4eQk0Ixfnm5ykXKvGJNFjLMoortdseTfsRT8oCfgGA==" data-cf-beacon="{&quot;rayId&quot;:&quot;790fe2be7fee8577&quot;,&quot;version&quot;:&quot;2022.11.3&quot;,&quot;r&quot;:1,&quot;token&quot;:&quot;1b7cbb72744b40c580f8633c6b62637e&quot;,&quot;si&quot;:100}" crossorigin="anonymous"></script>
+
+
+<style>
+  #signin_image{
+    background-image: url("/app/assets/images/curved6.jpg") !important;
+  }
+  #ofBar {
+    background: #fff;
+    z-index: 999999999;
+    font-size: 16px;
+    color: #333;
+    padding: 16px 40px;
+    font-weight: 400;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 40px;
+    width: 80%;
+    border-radius: 8px;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0 13px 27px -5px rgba(50,50,93,0.25), 0 8px 16px -8px rgba(0,0,0,0.3), 0 -6px 16px -6px rgba(0,0,0,0.025);
+  }
+
+  #ofBar-logo img {
+    height: 50px;
+  }
+
+  #ofBar-content {
+    display: inline;
+    padding: 0 15px;
+  }
+
+  #ofBar-right {
+    display: flex;
+    align-items: center;
+  }
+
+  #ofBar b {
+    font-size: 15px !important;
+  }
+  #count-down {
+    display: initial;
+    padding-left: 10px;
+    font-weight: bold;
+    font-size: 20px;
+  }
+  #close-bar {
+    font-size: 17px;
+    opacity: 0.5;
+    cursor: pointer;
+  }
+  #close-bar:hover{
+    opacity: 1;
+  }
+  #btn-bar {
+    background-image: linear-gradient(310deg, #141727 0%, #3A416F 100%);
+    color: #fff;
+    border-radius: 4px;
+    padding: 10px 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 12px;
+    opacity: .95;
+    margin-right: 20px;
+    box-shadow: 0 5px 10px -3px rgba(0,0,0,.23), 0 6px 10px -5px rgba(0,0,0,.25);
+  }
+   #btn-bar, #btn-bar:hover, #btn-bar:focus, #btn-bar:active {
+     text-decoration: none !important;
+     color: #fff !important;
+ }
+  #btn-bar:hover{
+    opacity: 1;
+  }
+
+  #btn-bar span, #ofBar-content span {
+    color: red;
+    font-weight: 700;
+  }
+
+  #oldPriceBar {
+    text-decoration: line-through;
+    font-size: 16px;
+    color: #fff;
+    font-weight: 400;
+    top: 2px;
+    position: relative;
+  }
+  #newPrice{
+    color: #fff;
+    font-size: 19px;
+    font-weight: 700;
+    top: 2px;
+    position: relative;
+    margin-left: 7px;
+  }
+
+  #fromText {
+    font-size: 15px;
+    color: #fff;
+    font-weight: 400;
+    margin-right: 3px;
+    top: 0px;
+    position: relative;
+  }
+
+  @media(max-width: 991px){
+
+  }
+  @media (max-width: 768px) {
+    #count-down {
+      display: block;
+      margin-top: 15px;
+    }
+
+    #ofBar {
+      flex-direction: column;
+      align-items: normal;
+    }
+
+    #ofBar-content {
+      margin: 15px 0;
+      text-align: center;
+      font-size: 18px;
+    }
+
+    #ofBar-right {
+      justify-content: flex-end;
+    }
+  }
+</style>
+
+<script type="text/javascript" id="">function setCookie(a,d,c){var b=new Date;b.setTime(b.getTime()+864E5*c);c="expires\x3d"+b.toUTCString();document.cookie=a+"\x3d"+d+";"+c+";path\x3d/"}function readCookie(a){a+="\x3d";for(var d=document.cookie.split(";"),c=0;c<d.length;c++){for(var b=d[c];" "==b.charAt(0);)b=b.substring(1,b.length);if(0==b.indexOf(a))return b.substring(a.length,b.length)}return null}
+function createOfferBar(){var a=document.createElement("div");a.setAttribute("id","ofBar");a.innerHTML="\x3cdiv id\x3d'ofBar-logo'\x3e \x3cimg alt\x3d'creative-tim-logo' src\x3d'https://s3.amazonaws.com/creativetim_bucket/static-assets/logo-ct-black.png'\x3e\x3c/div\x3e\x3cdiv id\x3d'ofBar-content'\x3e\ud83c\udf89 Take advantage of the last deals of the year! Choose your favorite \x3cb\x3eWinter Bundle and save 80% OFF\x3c/b\x3e \u2744\ufe0f\x3c/div\x3e\x3cdiv id\x3d'ofBar-right'\x3e\x3ca href\x3d'https://www.creative-tim.com/campaign?ref\x3dct-demos' target\x3d'_blank' id\x3d'btn-bar'\x3eView Offer\x3c/a\x3e\x3ca id\x3d'close-bar'\x3e\u00d7\x3c/a\x3e\x3c/div\x3e";document.body.insertBefore(a,
+document.body.firstChild)}function closeOfferBar(){document.getElementById("ofBar").setAttribute("style","display:none");setCookie("view_offer_bar","true",1)}var value=readCookie("view_offer_bar");
+if(null==value){createOfferBar();document.getElementById("close-bar").addEventListener("click",closeOfferBar);var countDownDate=Date.UTC(2020,10,28,8,0,0),x=setInterval(function(){var a=(new Date((new Date).toUTCString())).getTime();a=countDownDate-a;var d=Math.floor(a/864E5),c=Math.floor(a%864E5/36E5),b=Math.floor(a%36E5/6E4),e=Math.floor(a%6E4/1E3);document.getElementById("count-down").innerHTML=d+"d "+c+":"+b+":"+e;0>a&&(clearInterval(x),document.getElementById("count-down").innerHTML="EXPIRED")},
+1E3)};</script>
+  <script type="text/javascript" id="">!function(d,g,e){d.TiktokAnalyticsObject=e;var a=d[e]=d[e]||[];a.methods="page track identify instances debug on off once ready alias group enableCookie disableCookie".split(" ");a.setAndDefer=function(b,c){b[c]=function(){b.push([c].concat(Array.prototype.slice.call(arguments,0)))}};for(d=0;d<a.methods.length;d++)a.setAndDefer(a,a.methods[d]);a.instance=function(b){b=a._i[b]||[];for(var c=0;c<a.methods.length;c++)a.setAndDefer(b,a.methods[c]);return b};a.load=function(b,c){var f="https://analytics.tiktok.com/i18n/pixel/events.js";
+a._i=a._i||{};a._i[b]=[];a._i[b]._u=f;a._t=a._t||{};a._t[b]=+new Date;a._o=a._o||{};a._o[b]=c||{};c=document.createElement("script");c.type="text/javascript";c.async=!0;c.src=f+"?sdkid\x3d"+b+"\x26lib\x3d"+e;b=document.getElementsByTagName("script")[0];b.parentNode.insertBefore(c,b)};a.load("CC6UAQBC77U7GVKHLC4G");a.page()}(window,document,"ttq");</script>
+  <iframe name="_hjRemoteVarsFrame" title="_hjRemoteVarsFrame" tabindex="-1" aria-hidden="true" id="_hjRemoteVarsFrame" src="https://vars.hotjar.com/box-fc6c0cda90900662e5160cde908b3e86.html" style="display: none !important; width: 1px !important; height: 1px !important; opacity: 0 !important; pointer-events: none !important;"></iframe><iframe id="_hjSafeContext_79568854" title="_hjSafeContext" tabindex="-1" aria-hidden="true" src="about:blank" style="display: none !important; width: 1px !important; height: 1px !important; opacity: 0 !important; pointer-events: none !important;"></iframe></body>
