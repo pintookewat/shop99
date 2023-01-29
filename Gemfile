@@ -16,7 +16,6 @@
   gem "stimulus-rails"
   gem "jbuilder"
   gem 'carrierwave'
-  gem 'jquery-rails'
   gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
   gem "bootsnap", require: false
   gem "sassc-rails"
