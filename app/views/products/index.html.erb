@@ -11,11 +11,13 @@
       <div id="user_prduct">
         <hr class="invisible">
         <div class="text-center">
-          <div class="user_image mr-5"></div>
+          <div class="user_image mr-5">
+           <%= image_tag "/uploads/product/images/#{product[:id]}/#{  product.images.present? ? product[:images] : "DSC_1258.JPG"  }", class: "user_image ml-4" %>
+          </div>
         </div>
         <div class=" user_text text-center">
           <h5>Name: <%= product.name.titleize %></h5>
-          <h5>Price: <%= product.price %> </h5>
+          <h5>Price: <%= product.price %>&#8377;</h5>
         </div>
         <hr>
         <div class="d-flex justify-content-around">

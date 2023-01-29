@@ -26,7 +26,9 @@ class ProductsController < ApplicationController
 
     product_id =  Stripe::Product.create({name: params[:product][:name]})
 
-    product_price = Stripe::Price.create({ unit_amount: params[:product][:price], currency: 'INR', product: product_id[:id]})
+    product_price = params[:product][:price].to_i * 100 
+
+    product_price = Stripe::Price.create({ unit_amount: product_price, currency: 'INR', product: product_id[:id]})
 
 
     product_url = Stripe::PaymentLink.create({line_items: [{price: product_price[:id],quantity: 1}],})

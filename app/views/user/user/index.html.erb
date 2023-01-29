@@ -1,38 +1,34 @@
-<div class="col-9 ml-4">
-  <a class="btn   btn-info text-center ml-3 mt-1" href="/products/new">Create Product</a>
+<div class=" ml-4">
   <div class="index_user  mt-4">
-    <% if  @products.present? %>
     <% @products.each do |product| %>
     <%# binding.break %>
-    <div id="user_prduct">
+    <div id="user_shop">
       <hr class="invisible">
       <div class="text-center">
-        <div class="user_image mr-5"></div>
+        <div class="user_image mr-5">
+          <%= image_tag "/uploads/product/images/#{product[:id]}/#{  product.images.present? ? product[:images] : "DSC_1258.JPG"  }", class: "user_image ml-4" %>
+        </div>
       </div>
       <div class=" user_text text-center">
         <h5>Name: <%= product.name.titleize %></h5>
-        <h5>Price: <%= product.price %> </h5>
+        <h5>Price: <%= product.price %>&#8377; </h5>
       </div>
       <hr>
-      <div class="d-flex justify-content-around">
-        <%= link_to "Edit Qr", edit_product_path(product), class: "btn btn-info ml-2" %>
-        <%= link_to "Destroy ", product_destroy_product_path(product), method: :delete, class: "btn btn-danger ml-2" %>
+      <div class="d-flex justify-content-around mb-2">
+        <%= link_to "Buy Product", product.url, class: "btn bg-gradient-info ml-2" %>
       </div>
     </div>
     <% end %>
-    <% else %>
-    <h1 class="text-center text-info">No Product Present</h1>
-    <%  end %>
   </div>
   
 </div>
 <style type="text/css">
-#user_prduct{
-background-color: rgba(102, 88, 234, 0.15);
+  #user_shop{
+    background-color: rgba(102, 88, 234, 0.15);
 /*      margin-top: 30px;
 margin-left: 100px;*/
 float: left;
-margin: 13px;
+margin: 4%;
 height: 340px;
 width: 308px;
 box-shadow:  8px 6px 7px 1px #888888;
@@ -42,12 +38,12 @@ border-bottom-left-radius: 13px;
 border-top-right-radius: 15px;
 transition: 1s;
 }
-#user_prduct:hover{
-background-color: white;
+#user_shop:hover{
+  background-color: white;
 /*      margin-top: 30px;
 margin-left: 100px;*/
 float: left;
-margin: 13px;
+margin: 4%;
 height: 340px;
 width: 308px;
 box-shadow:  rgba(102, 88, 234, 0.15);
@@ -58,11 +54,11 @@ border-top-right-radius: 15px;
 cursor: pointer;
 }
 .user_image{
-margin-top: 2px !important;
-margin-left: 20px;
-background-color: var(--main-back-color);
-height: 200px;
-width: 200px !important;
-border-radius: 10%;
+  margin-top: 2px !important;
+  margin-left: 20px;
+  background-color: var(--main-back-color);
+  height: 200px;
+  width: 200px !important;
+  border-radius: 10%;
 }
 </style>

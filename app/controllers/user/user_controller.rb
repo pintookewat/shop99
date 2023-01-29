@@ -4,8 +4,7 @@ class User::UserController < ApplicationController
   def index
 
     user = User.where.not(:id=>current_user.id)
- #  @products = user.qrcodes
-    
+  @products = Product.all    
   end
 
   
