@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-lg blur blur-rounded  z-index-3 shadow  my-3 py-2 start-0 end-0 mx-4">
 	<div class="container-fluid pe-0">
 		<% if user_signed_in?  %>
-		<a class="navbar-brand font-weight-bolder ms-lg-0 ms-3 " href="/user/user">
+		<a class="navbar-brand font-weight-bolder ms-lg-0 ms-3 " href="/dashboard">
 			Shop99
 		</a>
 		<% else %>
@@ -20,7 +20,7 @@
 			<ul class="navbar-nav mx-auto ms-xl-auto me-xl-7">
 				<% if user_signed_in?  %>
 				<li class="nav-item">
-					<a class="nav-link d-flex align-items-center me-2 active" aria-current="page" href="/user/dashboard">
+					<a class="nav-link d-flex align-items-center me-2 active" aria-current="page" href="/homeuser/dashboard">
 						<i class="fa fa-chart-pie opacity-6 text-dark me-1" aria-hidden="true"></i>
 						Dashboard
 					</a>

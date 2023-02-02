@@ -22,6 +22,8 @@
   gem 'rmagick'
   gem 'stripe'
   gem "dotenv-rails"
+  gem 'omniauth-facebook'
+  gem "oa-oauth", :require => "omniauth/oauth"
 
   group :development, :test do
     gem "debug", platforms: %i[ mri mingw x64_mingw ]
