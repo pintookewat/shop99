@@ -1,5 +1,6 @@
 class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   def facebook
+    binding.break
     @user = User.find(request.env["omniauth.auth"])
 
     if @user.persisted?
