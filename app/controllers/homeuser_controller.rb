@@ -1,14 +1,12 @@
-class User::UserController < ApplicationController
+class HomeuserController < ApplicationController
   before_action :authenticate_user!
   
   def index
-
     user = User.where.not(:id=>current_user.id)
-  @products = Product.all    
+    @products = Product.all    
   end
 
   
-  def dahsboard
+  def dashboard
   end
-
 end
