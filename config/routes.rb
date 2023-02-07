@@ -11,7 +11,7 @@ Rails.application.routes.draw do
     get '/users/sign_out' => 'devise/sessions#destroy'
   end
 
-   devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
+   # devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
@@ -19,8 +19,10 @@ Rails.application.routes.draw do
 
     
    resources :homeuser do
+    get :add_cart, on: :member
     collection do
       get '/dashboard', to: "homeuser#dashboard"
     end
+
    end
 end

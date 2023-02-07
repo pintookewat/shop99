@@ -6,7 +6,15 @@ class HomeuserController < ApplicationController
     @products = Product.all    
   end
 
-  
   def dashboard
   end
+
+  def add_cart
+    user_cart = current_user.carts
+    product = Product.find(params[:id])
+
+    cart = current_user.cart
+    Cart.update(product_id: product.id)
+  end
+
 end
