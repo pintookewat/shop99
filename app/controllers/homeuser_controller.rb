@@ -1,13 +1,12 @@
 class HomeuserController < ApplicationController
   before_action :authenticate_user!
-  
+
   def index
-    user = User.where.not(:id=>current_user.id)
-    @products = Product.all    
+    user = User.where.not(id: current_user.id)
+    @products = Product.all
   end
 
-  def dashboard
-  end
+  def dashboard; end
 
   def add_cart
     user_cart = current_user.carts
@@ -16,5 +15,4 @@ class HomeuserController < ApplicationController
     cart = current_user.cart
     Cart.update(product_id: product.id)
   end
-
 end
