@@ -1,10 +1,33 @@
-<p style="color: green"><%= notice %></p>
+<div class="text-center">
 
-<%= render @qrcode %>
+<% if @qrcode.file_url.include?("jpeg")  ||  @qrcode.file_url.include?("png") || @qrcode.file_url.include?("gif")  %>
+<div class="mt-lg-4">
+<%= image_tag @qrcode.file_url %>
+</div>
+<% elsif @qrcode.file_url.include?("mp3")   %>
+<div class="mt-lg-4">
 
-<div>
-  <%= link_to "Edit this qrcode", edit_qrcode_path(@qrcode) %> |
-  <%= link_to "Back to qrcodes", qrcodes_path %>
+<audio controls>
+  <source src="<%= @qrcode.file_url%>" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
+</div>
+<% elsif @qrcode.file_url.include?("pdf")   %>
 
-  <%= button_to "Destroy this qrcode", @qrcode, method: :delete %>
+<iframe src="<%= @qrcode.file_url%>" height="600" width="1300"></iframe>
+
+<% elsif  @qrcode.file_url.include?("mp4")  %>
+
+  <video width="900" height="600" controls>
+    <source src="<%= @qrcode.file_url%>" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+
+<% else %>
+
+<iframe src="<%= @qrcode.file_url%>" height="600" width="1300"></iframe>
+
+
+<% end %>
+
 </div>

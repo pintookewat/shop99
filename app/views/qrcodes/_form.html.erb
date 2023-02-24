@@ -1,10 +1,11 @@
 <div class="row">
   <div class="col-2">
     
-  <%= render "layouts/side_navbar" %>
+    <%= render "layouts/side_navbar" %>
   </div>
   <div class="col-9"><div class="ml-5">
     <%= form_with(model: qrcode) do |form| %>
+    
     <% if qrcode.errors.any? %>
     <div style="color: red">
       <h2><%= pluralize(qrcode.errors.count, "error") %> prohibited this qrcode from being saved:</h2>
@@ -15,29 +16,41 @@
       </ul>
     </div>
     <% end %>
-    <div>
-      <%= form.hidden_field :user_id, value: current_user.id %>
-      <%= form.label :name, class: "mt-2" %>
-      <%= form.text_field :name, placeholder: 'Enter your Name', autofocus: true, autocomplete: "email",class:"form-control" %>
-    </div>
-    <div>
-      <%= form.label :location, style: "display: block", class: "mt-2" %>
-      <%= form.text_field :location, placeholder: 'Enter your Location', autofocus: true, autocomplete: "email",class:"form-control" %>
-    </div>
-    <div>
-      <%= form.label :color, "Select your color", class: "mt-3 text-center" %>
-      <%= form.text_field :color, placeholder: 'Enter your Location', autofocus: true, autocomplete: "email",class:"form-control ",  style: "height:40px; width:130px", type: "color" %>
-    </div>
-    <div class="text-center">
-      <% if params[:action] == 'new' %>
-      <%= form.submit "Create", class: "btn bg-gradient-info text-center  ml-5" %>
-      <% else %>
-      <%= form.submit "Update", class: "btn bg-gradient-info text-center mt-2 ml-5" %>
+    <ul class="nav nav-tabs" id="myTab" role="tablist">
+      <li class="nav-item">
+        <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Link</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">File</a>
+      </li>
+    </ul>
+    <div class="tab-content" id="myTabContent">
+      <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+        <div>
+          <%= form.hidden_field :user_id, value: current_user.id %>
+          <%= form.label :location, style: "display: block", class: "mt-2" %>
+          <%= form.text_field :location, placeholder: 'Enter your Location', autofocus: true, autocomplete: "email",class:"form-control", autocomplete: true %>
+        </div></div>
+        <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+          <%= form.label :file, class: "mt-2" %>
+        <%= form.file_field :file, placeholder: 'Enter your Name', autofocus: true, autocomplete: "email",class:"form-control" %></div>
+      </div>
+      <div>
+        <%= form.label :name, class: "mt-2" %>
+        <%= form.text_field :name, placeholder: 'Enter your Name', autofocus: true, autocomplete: "email",class:"form-control" %>
+      </div>
+      <div>
+        <%= form.label :color, "Select your color", class: "mt-3 text-center" %>
+        <%= form.text_field :color, placeholder: 'Enter your Location', autofocus: true, autocomplete: "email",class:"form-control ",  style: "height:40px; width:130px", type: "color" %>
+      </div>
+      <div class="text-center">
+        <% if params[:action] == 'new' %>
+        <%= form.submit "Create", class: "btn bg-gradient-info text-center  ml-5" %>
+        <% else %>
+        <%= form.submit "Update", class: "btn bg-gradient-info text-center mt-2 ml-5" %>
+        <% end %>
+      </div>
       <% end %>
     </div>
-    <% end %>
   </div>
 </div>
-</div>
-
-
