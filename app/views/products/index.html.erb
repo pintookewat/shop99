@@ -12,7 +12,7 @@
         <hr class="invisible">
         <div class="text-center">
           <div class="user_image mr-5">
-           <%= image_tag "/uploads/product/images/#{product[:id]}/#{  product.images.present? ? product[:images] : "DSC_1258.JPG"  }", class: "user_image ml-4" %>
+           <%= image_tag "#{product.images.present?} ? product[:images] : "DSC_1258.JPG"  }", class: "user_image ml-4" %>
           </div>
         </div>
         <div class=" user_text text-center">
