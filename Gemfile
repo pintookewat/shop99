@@ -23,6 +23,7 @@
   gem 'stripe'
   gem "dotenv-rails"
   gem 'omniauth-facebook'
+  gem 'rubocop', require: false
   gem "oa-oauth", :require => "omniauth/oauth"
 
   group :development, :test do
