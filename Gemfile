@@ -12,8 +12,11 @@ gem 'importmap-rails'
 gem 'jbuilder'
 gem 'jquery-rails'
 gem 'mini_magick'
-gem 'oa-oauth', require: 'omniauth/oauth'
-gem 'omniauth-facebook'
+gem 'rails_admin', '~> 3.0'
+# gem 'oa-oauth', require: 'omniauth/oauth'
+# gem 'omniauth-facebook'
+# gem 'omniauth'
+gem 'omniauth-rails_csrf_protection', git: 'https://github.com/the-spectator/omniauth-rails_csrf_protection', branch: 'fix_missing'
 gem 'pg'
 gem 'puma', '~> 5.0'
 gem 'rails', '~> 7.0.4'
@@ -23,7 +26,9 @@ gem 'rubocop', require: false
 gem 'sassc-rails'
 gem 'sprockets-rails'
 gem 'stimulus-rails'
+gem 'cssbundling-rails'
 gem 'stripe'
+gem "letter_opener", group: :development
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 
 group :development, :test do
@@ -40,3 +45,4 @@ group :test do
   gem 'webdrivers'
 end
 gem 'cssbundling-rails'
+gem "cssbundling-rails"
