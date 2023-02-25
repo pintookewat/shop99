@@ -12,6 +12,7 @@ gem 'importmap-rails'
 gem 'jbuilder'
 gem 'jquery-rails'
 gem 'mini_magick'
+gem 'rails_admin', '~> 3.0'
 # gem 'oa-oauth', require: 'omniauth/oauth'
 # gem 'omniauth-facebook'
 # gem 'omniauth'
@@ -42,3 +43,4 @@ group :test do
   gem 'webdrivers'
 end
 gem 'cssbundling-rails'
+gem "cssbundling-rails"
