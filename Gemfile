@@ -26,7 +26,9 @@ gem 'rubocop', require: false
 gem 'sassc-rails'
 gem 'sprockets-rails'
 gem 'stimulus-rails'
+gem 'cssbundling-rails'
 gem 'stripe'
+gem "letter_opener", group: :development
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 
 group :development, :test do
