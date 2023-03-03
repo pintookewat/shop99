@@ -1,0 +1,29 @@
+<div class="row">
+  <div class="col-2">
+    <%= render "layouts/side_navbar" %>
+  </div>
+  <div class="col-10">
+    <div class="index_user  mt-4 ml-3" >
+      <% if  @deleted_qrcode.present? %>
+      <% @deleted_qrcode.each do |qrcode| %>
+      <%# binding.break %>
+      <div id="user_index" style="height:340px;">
+        <hr class="invisible">
+        <div class="text-center">
+          <%= image_tag qrcode.image, class: "user_image" %>
+        </div>
+        <div class=" user_text text-center">
+          <h5>Name: <%= qrcode.name.titleize %></h5>
+        </div>
+        <hr>
+        <div class="d-flex">
+         
+          <%= link_to "Recover your Qrcode ", qrcode_recover_qrcode_path(qrcode), method: :delete, class: "btn btn-danger ml-5 text-center d-block btn-lg" %>
+        </div>
+      </div>
+      <% end %>
+      <% else %>
+      <h1 class="text-center text-info">No Qr Present</h1>
+      <%  end %>
+    </div>
+  </div>

@@ -7,9 +7,9 @@ class QrcodesController < ApplicationController
 
   def show
     @qrcode = Qrcode.find(params[:id])
-    return unless @qrcode.location.present?
-
-    redirect_to @qrcode.location, allow_other_host: true
+    if  @qrcode.location.present?
+      redirect_to @qrcode.location, allow_other_host: true
+    end
   end
 
   def new
@@ -67,6 +67,18 @@ class QrcodesController < ApplicationController
     end
   end
 
+
+  def recover_qrcode_page
+      @deleted_qrcode = Qrcode.with_deleted.where.not(deleted_at: nil)
+  end
+  def recover_qrcode
+    qrcode = Qrcode.only_deleted.find(params[:qrcode_id])
+    if qrcode.recover
+      redirect_to '/qrcodes'
+    else
+      redirect_to qrcode_recover_qrcode_path 
+    end
+  end
   def update
     @qrcode = Qrcode.find(params[:id])
 

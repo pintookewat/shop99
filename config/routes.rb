@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   end
   resources :qrcodes do
     get :destroy_qr
+    get :recover_qrcode_page, on: :collection
+    get  :recover_qrcode
   end
 
   devise_for :users
