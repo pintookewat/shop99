@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_03_03_203410) do
+ActiveRecord::Schema[7.0].define(version: 2023_03_04_043521) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -59,6 +59,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_03_203410) do
     t.string "file_path"
     t.string "file"
     t.datetime "deleted_at"
+    t.string "slug"
   end
 
   create_table "users", force: :cascade do |t|

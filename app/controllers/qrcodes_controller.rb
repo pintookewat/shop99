@@ -7,7 +7,7 @@ class QrcodesController < ApplicationController
   end
 
   def show
-    @qrcode = Qrcode.find(params[:id])
+    @qrcode = Qrcode.friendly.find(params[:id])
     if  @qrcode.location.present?
       redirect_to @qrcode.location, allow_other_host: true
     end
@@ -18,7 +18,7 @@ class QrcodesController < ApplicationController
   end
 
   def edit
-    @qrcode = Qrcode.find(params[:id])
+    @qrcode = Qrcode.friendly.find(params[:id])
   end
 
   def create
@@ -104,7 +104,7 @@ class QrcodesController < ApplicationController
     end
  end
   def update
-    @qrcode = Qrcode.find(params[:id])
+    @qrcode = Qrcode.friendly.find(params[:id])
     if @qrcode.update(qrcode_params)
       redirect_to '/qrcodes'
     else
@@ -114,7 +114,7 @@ class QrcodesController < ApplicationController
 
   # DELETE /qrcodes/1 or /qrcodes/1.json
   def destroy_qr
-    @qrcode = Qrcode.find(params[:qrcode_id])
+    @qrcode = Qrcode.friendly.find(params[:qrcode_id])
     @qrcode.destroy
     redirect_to '/qrcodes'
   end
@@ -122,7 +122,7 @@ class QrcodesController < ApplicationController
   private
 
   def set_qrcode
-    @qrcode = Qrcode.find(params[:id])
+    @qrcode = Qrcode.friendly.find(params[:id])
   end
 
   def qrcode_params
