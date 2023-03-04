@@ -74,11 +74,11 @@ class QrcodesController < ApplicationController
 
 
   def recover_qrcode_page
-      @deleted_qrcode = Qrcode.with_deleted.where.not(deleted_at: nil)
+      @deleted_qrcode = Qrcode.with_deleted.friendly.where.not(deleted_at: nil)
   end
 
   def recover_qrcode
-    qrcode = Qrcode.only_deleted.find(params[:qrcode_id])
+    qrcode = Qrcode.only_deleted.friendly.find(params[:qrcode_id])
     if qrcode.recover
       redirect_to '/qrcodes'
     else
@@ -95,7 +95,7 @@ class QrcodesController < ApplicationController
 
 
  def all_recover_qrcode
-    @qrcode = Qrcode.with_deleted.where.not(deleted_at: nil)
+    @qrcode = Qrcode.with_deleted.friendly.where.not(deleted_at: nil)
 
     @qrcode.each do |qrcode|
       qrcode.recover
