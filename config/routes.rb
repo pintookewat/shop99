@@ -9,6 +9,7 @@ Rails.application.routes.draw do
     get  :recover_qrcode
     get  :all_recover_qrcode, on: :collection
     get  :all_delete_qrcode, on: :collection
+    get  :checkbox_list_qrcodes, on: :collection
   end
 
   devise_for :users

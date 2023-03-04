@@ -3,7 +3,11 @@ class QrcodesController < ApplicationController
   include Magick
 
   def index
-    @qrcode = current_user.qrcodes
+    if params[:query].present?
+     @qrcode = current_user.qrcodes.search_by_name(params[:query])
+    else
+      @qrcode = current_user.qrcodes
+    end
   end
 
   def show
@@ -81,6 +85,14 @@ class QrcodesController < ApplicationController
       redirect_to qrcode_recover_qrcode_path 
     end
   end
+
+
+
+  def checkbox_list_qrcodes
+
+  end
+
+
 
  def all_recover_qrcode
     @qrcode = Qrcode.with_deleted.where.not(deleted_at: nil)
