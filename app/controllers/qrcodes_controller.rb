@@ -1,6 +1,7 @@
 class QrcodesController < ApplicationController
   require 'RMagick'
   include Magick
+
   def index
     @qrcode = current_user.qrcodes
   end
@@ -71,6 +72,7 @@ class QrcodesController < ApplicationController
   def recover_qrcode_page
       @deleted_qrcode = Qrcode.with_deleted.where.not(deleted_at: nil)
   end
+
   def recover_qrcode
     qrcode = Qrcode.only_deleted.find(params[:qrcode_id])
     if qrcode.recover
@@ -79,9 +81,30 @@ class QrcodesController < ApplicationController
       redirect_to qrcode_recover_qrcode_path 
     end
   end
+
+ def all_recover_qrcode
+    @qrcode = Qrcode.with_deleted.where.not(deleted_at: nil)
+
+    @qrcode.each do |qrcode|
+      qrcode.recover
+    end
+    if  @qrcode.blank?
+      redirect_to '/qrcodes'
+    else
+      redirect_to all_recover_qrcode_qrcodes_path 
+    end
+ end
+
+ def  all_delete_qrcode
+    qrcode = Qrcode.only_deleted.all
+    if qrcode.destroy_all
+      redirect_to '/qrcodes'
+    else
+      redirect_to all_delete_qrcode_qrcodes_path
+    end
+ end
   def update
     @qrcode = Qrcode.find(params[:id])
-
     if @qrcode.update(qrcode_params)
       redirect_to '/qrcodes'
     else
