@@ -3,7 +3,10 @@
     <%= render "layouts/side_navbar" %>
   </div>
   <div class="col-10">
+    <div class="d-flex justify-content-between">
     <a class="btn   btn-info text-center ml-3 mt-1" href="/qrcodes/new">Create Qrcode</a>
+    <a class="btn   btn-dark text-center mr-3 mt-1" href="/qrcodes/recover_qrcode_page">Recover Qrcode</a>
+    </div>
     <div class="index_user  mt-4 ml-3">
       <% if  @qrcode.present? %>
       <% @qrcode.each do |qrcode| %>

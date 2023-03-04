@@ -30,6 +30,8 @@ gem 'sassc-rails'
 gem 'sprockets-rails'
 gem 'stimulus-rails'
 gem 'stripe'
+gem 'acts_as_paranoid'
+gem 'friendly_id', '~> 5.4.0'
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 
 group :development, :test do
