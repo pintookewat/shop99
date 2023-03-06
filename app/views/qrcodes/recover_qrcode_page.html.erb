@@ -1,3 +1,4 @@
+<%= form_with(url: checkbox_list_qrcodes_qrcodes_path, multiple: true, method: :get, local: true) do |f| %>
 <div class="row">
   <div class="col-2">
     <%= render "layouts/side_navbar" %>
@@ -6,6 +7,8 @@
     <div class="d-flex justify-content-between">
       <% if @deleted_qrcode.blank? == false %>
       <a class="btn   btn-dark text-center ml-3 mt-1" href="/qrcodes/all_delete_qrcode">Delete all</a>
+      <%= f.submit 'Recover', class:"btn   btn-success text-center mr-3 mt-1"  %>
+
       <a class="btn   btn-success text-center mr-3 mt-1" href="/qrcodes/all_recover_qrcode">Recover All</a>
       <% end %>
     </div>
@@ -15,11 +18,11 @@
       <%# binding.break %>
       <div id="user_index" style="height:340px;">
         <hr class="invisible">
-        <div class="text-center">
-          <%= form_with(url: checkbox_list_qrcodes_qrcodes_path, multiple:true, method: :get, local: true) do |f| %> 
-          <%= f.check_box  :checkbox_list %>
-          <%= f.submit 'Search', checkbox_list: nil %>
-          <% end %>
+        <div class="text-center ">
+          
+          <%= f.check_box  :checkbox_list, id:"html", class:"float-right mr-3" %>
+
+          
           <%= image_tag qrcode.image, class: "user_image" %>
         </div>
         <div class=" user_text text-center">
@@ -37,3 +40,4 @@
       <%  end %>
     </div>
   </div>
+  <% end %>

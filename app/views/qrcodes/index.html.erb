@@ -7,11 +7,11 @@
     <a class="btn   btn-info text-center ml-3 mt-1" href="/qrcodes/new">Create Qrcode</a>
     <a class="btn   btn-dark text-center mr-3 mt-1" href="/qrcodes/recover_qrcode_page">Recover Qrcode</a>
     </div>
-
-    <%= form_with(url: qrcodes_path, method: "get", id: "search", remote: true) do %>
+    <%= form_with(url: qrcodes_path, method: "get", id: "search") do %>
     <div class="d-flex ml-5">
       <%= text_field_tag(:query, nil, class: "form-control w-25 h-25 d-inline-block", placeholder: "Search Name") %>
       <%= submit_tag("Search", class: "btn btn-success h-25 d-inline-block ml-2 ") %>
+      <a class="btn   btn-secondary text-center ml-3" href="/qrcodes">Reset</a>
       </div>
   <% end %>
     <div class="index_user  mt-4 ml-3">
@@ -48,7 +48,6 @@
     </div>
   </div>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
 <script>
 // $(document).ready(function(){
 //   $("#search").keydown(function(){
