@@ -67,3 +67,19 @@ overflow-x: hidden;
   border-width: 0 2px 2px 0;
   transform: rotate(45deg);
 }
+.boxed label {
+  cursor: pointer;
+display: inline-block;
+width: 90px;
+padding: 10px;
+border: solid 2px #ccc;
+transition: all 0.3s;
+}
+.boxed input[type="radio"] {
+display: none;
+cursor: pointer;
+}
+.boxed input[type="radio"]:checked + label {
+border: solid 2px #cb0c9f;
+cursor: pointer;
+}
