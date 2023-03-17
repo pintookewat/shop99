@@ -1,5 +1,6 @@
 class QrcodesController < ApplicationController
   require 'RMagick'
+  require 'chunky_png'
   include Magick
 
   def index
@@ -32,6 +33,7 @@ class QrcodesController < ApplicationController
          else
            RQRCode::QRCode.new(qrcode_url(@qrcode))
          end
+
     png = qr.as_png(
       bit_depth: 1,
       border_modules: 4,
@@ -39,11 +41,23 @@ class QrcodesController < ApplicationController
       color: params[:qrcode][:color],
       file: nil,
       fill: 'white',
-      module_px_size: 6,
+    #  module_px_size: 6,
+      module_px_size: 6/4,
       resize_exactly_to: false,
       resize_gte_to: false,
-      size: 300
+      size: 300,
     )
+    # byebug
+    #   mask = ChunkyPNG::Image.new(300, 300, ChunkyPNG::Color::BLACK)
+
+    #   # Draw a circle in the center of the mask
+    #   center_x = 300 / 2
+    #   center_y = 300 / 2
+    #   radius = 300 / 2 - 5
+    #   mask.circle(center_x, center_y, radius, ChunkyPNG::Color::WHITE, ChunkyPNG::Color::BLACK)
+    #   png = ChunkyPNG::Image.from_blob(png).to_s
+    #   png.compose!(mask)
+
     filepath = "/uploads/qr_image/#{Time.now.to_i}.png"
     IO.binwrite('public' + filepath, png.to_s)
 
@@ -138,6 +152,6 @@ class QrcodesController < ApplicationController
   end
 
   def qrcode_params
-    params.require(:qrcode).permit(:name, :location, :user_id, :file, :image, :color)
+    params.require(:qrcode).permit(:name, :location, :user_id, :file, :image, :color, :shape)
   end
 end

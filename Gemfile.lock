@@ -351,6 +351,7 @@ DEPENDENCIES
   byebug
   capybara
   carrierwave
+  chunky_png
   cssbundling-rails
   debug
   devise
@@ -384,4 +385,4 @@ RUBY VERSION
    ruby 3.0.2p107
 
 BUNDLED WITH
-   2.3.25
+   2.4.7

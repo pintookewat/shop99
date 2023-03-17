@@ -32,6 +32,7 @@ gem 'stripe'
 gem 'acts_as_paranoid'
 gem 'friendly_id', '~> 5.4.0'
 gem 'pg_search'
+gem 'chunky_png'
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 
 group :development, :test do
