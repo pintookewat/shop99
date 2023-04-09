@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  rolify
   devise :database_authenticatable, :registerable, :recoverable, :rememberable, :validatable, :omniauthable
 
   # omniauth_providers: %i[facebook]
@@ -7,29 +8,38 @@ class User < ApplicationRecord
   has_many :products, dependent: :destroy
 
 
-  def self.find_for_facebook_outh(auth)
-    user = User.where(provider: auth.provider, uid: auth.uid).first
-    return user if user
 
-    user = User.where(email: auth.info.email).first
-    return user if user
+  def self.super_admin?(current_user)
+    current_user.has_role? :super_admin
+  end
 
-    User.create(
-      name: auth.extra.raw_info.name,
-      provider: auth.provider,
-      uid: auth.uid,
-      email: auth.info.email,
-      image_facebook: auth.info.image,
-      password: Devise.friendly_token[0, 20]
-    )
+  def self.user?(current_user)
+    current_user.has_role? :user
   end
 
 
+  rails_admin do
+     edit do
+       exclude_fields :last_sign_in_at
+       exclude_fields :confirmation_sent_at
+       exclude_fields :unconfirmed_email
+       exclude_fields :failed_attempts
+       exclude_fields :unlock_token
+       exclude_fields :remember_created_at
+       exclude_fields :last_sign_in_ip
+       exclude_fields :sign_in_count
+      exclude_fields :confirmation_token
+     end
+    end
 
-  # def self.from_omniauth(auth)
-  #   name_split = auth.info.name.split(" ")
-  #   user = User.where(email: auth.info.email).first
-  #   user ||= User.create!(provider: auth.provider, uid: auth.uid,  name: name_split[1], email: auth.info.email, password: Devise.friendly_token[0, 20])
-  #     user
-  # end
+  rails_admin do
+    list do
+      field :full_name
+      field :email
+      field :gender
+      field :age
+      field :phone
+    end
+  end
+
 end

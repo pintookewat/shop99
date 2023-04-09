@@ -34,6 +34,8 @@ gem 'friendly_id', '~> 5.4.0'
 gem 'pg_search'
 gem 'chunky_png'
 gem 'rails_admin', '~> 3.0'
+gem "rolify"
+gem 'cancancan'
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 
 group :development, :test do

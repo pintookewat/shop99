@@ -37,6 +37,15 @@
 						Product
 					</a>
 				</li>
+				<% if User.super_admin?(current_user)  %>	
+				<li class="nav-item">
+					<a class="nav-link me-2" href="/admin">
+						<i class="fas fa-key opacity-6 text-dark me-1" aria-hidden="true"></i>
+						Admin Dashboard
+					</a>
+				</li>
+				<% end %>
+
 					<%  else %>
 				<li class="nav-item">
 					<a class="nav-link me-2" href="/users/sign_up">
