@@ -1,3 +1,6 @@
+.col-sm-offset-3{
+  margin-top: -230px;
+}
 /*!
  * bootswatch v3.3.4+1
  * Homepage: http://bootswatch.com
@@ -6826,4 +6829,47 @@ a.list-group-item-danger.active:focus {
 }
 .popover {
   color: #2c3e50;
+}
+
+.navbar-brand{
+  color: white;
+}
+.navbar-brand:hover{
+  color: white;
+}
+.dashboard_root_link{
+  list-style-type: none;
+}
+
+.navbar-toggler{
+  visibility: hidden;
+}
+.dashboard_root_link .nav-link{
+margin-left: 900px;
+ color: white; 
+}
+.nav-item a{
+  margin-left: 40px;
+  color:white;
+}
+.btn-toggle{
+  color:white;
+  background-color: #2c3e50;
+}
+#remove_filter{
+ margin-top: 30px;
+ visibility: hidden;
+}
+.nav-item .nav-link  {
+  color:#18bc9c;
+}
+.sidebar {
+  margin-left:10px;
+}
+.main-846495f9{
+  margin-top: 10px;
+  line-height: 2.5;
+}
+.dropdown-toggle{
+  visibility: hidden;
 }
