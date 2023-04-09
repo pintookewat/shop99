@@ -91,6 +91,7 @@ GEM
       msgpack (~> 1.2)
     builder (3.2.4)
     byebug (11.1.3)
+    cancancan (3.5.0)
     capybara (3.38.0)
       addressable
       matrix
@@ -240,7 +241,7 @@ GEM
       nokogiri (>= 1.6)
     rails-html-sanitizer (1.4.3)
       loofah (~> 2.3)
-    rails_admin (3.1.1)
+    rails_admin (3.1.2)
       activemodel-serializers-xml (>= 1.0)
       kaminari (>= 0.14, < 2.0)
       nested_form (~> 0.3)
@@ -264,6 +265,7 @@ GEM
     rexml (3.2.5)
     rmagick (5.1.0)
       pkg-config (~> 1.4)
+    rolify (6.0.1)
     rqrcode (2.1.2)
       chunky_png (~> 1.0)
       rqrcode_core (~> 1.0)
@@ -313,7 +315,7 @@ GEM
     thor (1.2.1)
     tilt (2.0.11)
     timeout (0.3.0)
-    turbo-rails (1.3.3)
+    turbo-rails (1.4.0)
       actionpack (>= 6.0.0)
       activejob (>= 6.0.0)
       railties (>= 6.0.0)
@@ -349,6 +351,7 @@ DEPENDENCIES
   acts_as_paranoid
   bootsnap
   byebug
+  cancancan
   capybara
   carrierwave
   chunky_png
@@ -370,6 +373,7 @@ DEPENDENCIES
   rails (~> 7.0.4)
   rails_admin (~> 3.0)
   rmagick
+  rolify
   rqrcode
   rubocop
   sassc-rails
