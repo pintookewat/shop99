@@ -14,7 +14,7 @@ RailsAdmin.config do |config|
   config.authorize_with :cancancan
   config.current_user_method(&:current_user)
 
-
+config.included_models = [ User, Product, Qrcode ]
   ## == Pundit ==
   # config.authorize_with :pundit
 
