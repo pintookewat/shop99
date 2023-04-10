@@ -4,16 +4,16 @@
   </div>
   <div class="col-10">
     <div class="d-flex justify-content-between">
-    <a class="btn   btn-info text-center ml-3 mt-1" href="/qrcodes/new">Create Qrcode</a>
-    <a class="btn   btn-dark text-center mr-3 mt-1" href="/qrcodes/recover_qrcode_page">Recover Qrcode</a>
+      <a class="btn   btn-info text-center ml-3 mt-1" href="/qrcodes/new">Create Qrcode</a>
+      <a class="btn   btn-dark text-center mr-3 mt-1" href="/qrcodes/recover_qrcode_page">Recover Qrcode</a>
     </div>
     <%= form_with(url: qrcodes_path, method: "get", id: "search") do %>
     <div class="d-flex ml-5">
       <%= text_field_tag(:query, nil, class: "form-control w-25 h-25 d-inline-block", placeholder: "Search Name") %>
       <%= submit_tag("Search", class: "btn btn-success h-25 d-inline-block ml-2 ") %>
       <a class="btn   btn-secondary text-center ml-3" href="/qrcodes">Reset</a>
-      </div>
-  <% end %>
+    </div>
+    <% end %>
     <div class="index_user  mt-4 ml-3">
       <% if  @qrcode.present? %>
       <% @qrcode.each do |qrcode| %>
@@ -38,20 +38,22 @@
         <% if qrcode.file.present? %>
         
         <%= link_to "Go to", qrcode_path(qrcode), method: :delete, class: "btn btn-info  btn-lg btn-block w-75 ms-5" %>
-    
+        
         <% end %>
       </div>
       <% end %>
       <% else %>
-      <h1 class="text-center text-info">No Qr Present</h1>
+      <div class="d-flex justify-content-center mr-5">
+        <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+        <lottie-player src="https://assets9.lottiefiles.com/packages/lf20_6SsPj1.json"  background="transparent"  speed="1"  style="width: 400px; height: 400px;"  loop  autoplay></lottie-player>
+      </div>
       <%  end %>
     </div>
   </div>
-
-<script>
-// $(document).ready(function(){
-//   $("#search").keydown(function(){
-//    $("#search").submit();
-//   });
-// });
-</script>
+  <script>
+  // $(document).ready(function(){
+  //   $("#search").keydown(function(){
+  //    $("#search").submit();
+  //   });
+  // });
+  </script>
