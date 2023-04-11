@@ -8,6 +8,10 @@ class HomeuserController < ApplicationController
 
   def dashboard; end
 
+  def google_analytics
+  
+  end
+
   def add_cart
     user_cart = current_user.carts
     product = Product.find(params[:id])

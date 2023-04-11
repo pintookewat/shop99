@@ -28,6 +28,7 @@ Rails.application.routes.draw do
     get :add_cart, on: :member
     collection do
       get '/dashboard', to: 'homeuser#dashboard'
+      get '/google_analytics', to: 'homeuser#google_analytics'
     end
   end
 end
