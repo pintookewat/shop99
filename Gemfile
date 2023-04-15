@@ -36,6 +36,7 @@ gem 'chunky_png'
 gem 'rails_admin', '~> 3.0'
 gem "rolify"
 gem 'cancancan'
+gem 'google-api-client'
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 
 group :development, :test do

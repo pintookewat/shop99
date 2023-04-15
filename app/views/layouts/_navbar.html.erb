@@ -19,6 +19,9 @@
 		<div class="collapse navbar-collapse" id="navigation">
 			<ul class="navbar-nav mx-auto ms-xl-auto me-xl-7">
 				<% if user_signed_in?  %>
+
+
+
 				<li class="nav-item">
 					<a class="nav-link d-flex align-items-center me-2 active" aria-current="page" href="/homeuser/dashboard">
 						<i class="fa fa-chart-pie opacity-6 text-dark me-1" aria-hidden="true"></i>
@@ -38,6 +41,12 @@
 					</a>
 				</li>
 				<% if User.super_admin?(current_user)  %>	
+					<li class="nav-item">
+					<a class="nav-link d-flex align-items-center me-2 active" aria-current="page" href="/homeuser/google_analytics">
+						<i class="fa fa-chart-pie opacity-6 text-dark me-1" aria-hidden="true"></i>
+						Google Analytics
+					</a>
+				</li>
 				<li class="nav-item">
 					<a class="nav-link me-2" href="/admin">
 						<i class="fas fa-key opacity-6 text-dark me-1" aria-hidden="true"></i>
