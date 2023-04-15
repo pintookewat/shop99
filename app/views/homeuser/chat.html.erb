@@ -1,0 +1,29 @@
+<div class=" container-fluid ">
+	<h1 class="alert alert-dark text-success text-center">Chat</h1>
+	<div class="text-center">
+		<script src="https://js.pusher.com/7.2/pusher.min.js"></script>
+		<script>
+		// Enable pusher logging - don't include this in production
+		Pusher.logToConsole = true;
+		var pusher = new Pusher('02d81411509942f35ab4', {
+		cluster: 'ap2'
+		});
+		var channel = pusher.subscribe('my-channel');
+		channel.bind('my-event', function(data) {
+		alert(JSON.stringify(data));
+		});
+		</script>
+		<h1 class="display-3">Pusher Test</h1>
+		<p class="h4">
+			Try publishing an event to channel <code>my-channel</code>
+			with event name <code>my-event</code>.
+		</p>
+		<div class="text-center">
+			<%= form_with url: "/homeuser/auth_chat", method: :post do |form| %>
+			<%= form.label :message, "Chat:" %>
+			<%= form.text_field :message, class: "" %>
+			<%= form.submit "chat", class: "btn bg-gradient-dark btn-lg mt-2" %>
+			<% end %>
+		</div>
+	</div>
+</div>

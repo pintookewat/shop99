@@ -254,6 +254,11 @@ GEM
     public_suffix (5.0.0)
     puma (5.6.5)
       nio4r (~> 2.0)
+    pusher (2.0.3)
+      httpclient (~> 2.8)
+      multi_json (~> 1.15)
+      pusher-signature (~> 0.1.8)
+    pusher-signature (0.1.8)
     racc (1.6.0)
     rack (2.2.4)
     rack-protection (3.0.5)
@@ -423,6 +428,7 @@ DEPENDENCIES
   pg
   pg_search
   puma (~> 5.0)
+  pusher
   rails (~> 7.0.4)
   rails_admin (~> 3.0)
   rmagick
