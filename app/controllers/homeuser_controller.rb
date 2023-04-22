@@ -1,6 +1,5 @@
 require 'google/apis/analyticsreporting_v4'
 require 'googleauth'
-require 'pusher'
 class HomeuserController < ApplicationController
   before_action :authenticate_user!
 
@@ -12,29 +11,12 @@ class HomeuserController < ApplicationController
   def dashboard; end
 
 
-  def chat
-    
+  def chatgpt
+    flash.now[:notice] = params[:message] if params[:message].present?
   end
 
-  def auth_chat 
-   pusher = Pusher::Client.new(
-     app_id: '1584992',
-     key: '02d81411509942f35ab4',
-     secret: '95bf7b1c80a4e7cc9bc3',
-     cluster: 'ap2',
-     encrypted: true
-   )
-
-    pusher.trigger('my-channel', 'my-event', {
-      message: "#{params[:message]}"
-    })
-    redirect_to '/homeuser/chat'
-    
-    # channel_name = params[:channel_name]
-    # socket_id = params[:socket_id]
-    # auth = Pusher.authenticate(channel_name, socket_id)
-    # render :json => auth
-    
+  def chatgpt_request
+    ChatgptService.call(params[:message], self)
   end
 
   def google_analytics
