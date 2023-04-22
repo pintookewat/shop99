@@ -27,6 +27,8 @@ Rails.application.routes.draw do
   resources :homeuser do
     get :add_cart, on: :member
     collection do
+      post '/chatgpt_request', to: "homeuser#chatgpt_request"
+      get '/chatgpt', to: "homeuser#chatgpt"
       get '/dashboard', to: 'homeuser#dashboard'
       get '/google_analytics', to: 'homeuser#google_analytics'
     end

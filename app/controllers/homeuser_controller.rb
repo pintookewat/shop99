@@ -10,6 +10,15 @@ class HomeuserController < ApplicationController
 
   def dashboard; end
 
+
+  def chatgpt
+    flash.now[:notice] = params[:message] if params[:message].present?
+  end
+
+  def chatgpt_request
+    ChatgptService.call(params[:message], self)
+  end
+
   def google_analytics
      # binding.break
     # @client = Google::Apis::AnalyticsreportingV4::AnalyticsReportingService.new
